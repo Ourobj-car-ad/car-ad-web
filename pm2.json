@@ -1,0 +1,16 @@
+{
+  "apps": [{
+    "name": "D:opensourcecar-ad-webD:opensourcecar-ad-web",
+    "script": "www/production.js",
+    "cwd": "D:\opensource\car-ad-web",
+    "exec_mode": "cluster",
+    "instances": 0,
+    "max_memory_restart": "1G",
+    "autorestart": true,
+    "node_args": [],
+    "args": [],
+    "env": {
+      
+    }
+  }]
+}
