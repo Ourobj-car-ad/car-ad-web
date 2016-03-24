@@ -10,7 +10,8 @@ export default class extends Base {
   async indexAction(){
     //auto render template file index_index.html
     let instance = this.model("admin");
-    let data = await instance.listAction();
+    //return this.success(instance);
+    let data = await instance.selectWithNameAction("admin");
     this.assign({
         title:"Name is : " + data.name,
         password: data.password 
