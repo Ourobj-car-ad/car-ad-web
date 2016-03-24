@@ -10,11 +10,11 @@ export default {
   adapter: {
     mysql: {
       host: '127.0.0.1',
-      port: '',
-      database: '',
-      user: '',
+      port: '3306',
+      database: 'ourobj-car-ad',
+      user: 'root',
       password: '',
-      prefix: 'think_',
+      prefix: 'car_',
       encoding: 'utf8'
     },
     mongo: {
