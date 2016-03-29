@@ -1,5 +1,3 @@
-CREATE DATABASE  IF NOT EXISTS `ourobj-car-ad` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
-USE `ourobj-car-ad`;
 -- MySQL dump 10.13  Distrib 5.6.23, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: ourobj-car-ad
@@ -27,7 +25,6 @@ DROP TABLE IF EXISTS `car_ad`;
 CREATE TABLE `car_ad` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `create_time` datetime NOT NULL,
-  `id_copy1` tinyint(11) NOT NULL,
   `update_time` datetime NOT NULL,
   `price` varchar(45) NOT NULL,
   `start_time` datetime NOT NULL,
@@ -120,6 +117,7 @@ CREATE TABLE `car_order` (
   `end_time` datetime NOT NULL,
   `advertiser_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
+  `region_info` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `create_time` (`create_time`)
@@ -197,4 +195,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-03-24 14:48:59
+-- Dump completed on 2016-03-29 19:31:24
