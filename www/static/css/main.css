@@ -1,0 +1,245 @@
+
+
+.od_head_bd{
+	width: 100%;
+    height: 128px;
+    border-top: 2px solid #eeb81a;
+    background-color: #FF773C;
+    margin:0 auto;
+	
+	
+	
+}
+
+
+.od_main{
+	width: 1200px;
+	margin:0 auto;
+	position:relative;
+}
+
+.od_logo{
+	display:block;
+	width:216px;
+	position:absolute;
+	top:35px;
+	left:30px;
+	height:78px;
+	background:url(/static/img/logo.png);
+	no-repeat;
+}
+.od_menu {
+	list-style:none;
+	margin:0;
+}
+
+.__web-inspector-hide-shortcut__, .__web-inspector-hide-shortcut__ *, .__web-inspector-hidebefore-shortcut__::before, .__web-inspector-hideafter-shortcut__::after{
+	visibility:hedden !important;
+}
+
+.od_menu li{
+	display:inline-block;
+	line-height:78px;
+	float:right;
+	margin-right:20px;
+	margin-top:50px;
+}
+	
+.od_menu li a{
+	display:inline-block;
+	padding:0 12px;
+	line-height:78px;
+	text-decoration:none;
+	font-size:35px;
+	color:#fff;
+}
+
+*{margin:0;padding:0;}
+	a{text-decoration:none;color:#000;}
+	ul li{list-style:none;}
+	.clear{clear:both;}
+	
+	
+	
+	/* banner start */
+	.banner{
+		max-width:1920px;
+		height:698px;
+		margin:0 auto 0;
+		overflow:hidden;
+		position:relative;
+		top:0;
+		left:0;
+		background-color:#FF773C;
+}
+	.banner ul li{
+		float:left;
+    }
+	.banner .b_ul li{
+		cursor:pointer;
+	}
+	.banner .b_ul .li_0{
+		display:block;
+		margin-left:-683px;
+		position:absolute;
+		left:50%;
+		width:1366px;
+		height:698px;
+		background:url(/static/img/index_1.png);
+		background-size:100% 100%; 
+		no-repeat;
+	}
+	.banner .b_ul .li_1{
+		display:block;
+		margin-left:-683px;
+		position:absolute;
+		left:50%;
+		width:1366px;
+		height:698px;
+		background:url(/static/img/index_2.png);
+		background-size:100% 100%; 
+		no-repeat;
+	}
+	.banner li a{
+		display:block;
+		width:100%;
+		height:786px;
+		position:absolute;
+		z-index:5;
+	}
+	.banner .b_yq{
+		width:134px;
+		height:20px;
+		position:absolute;
+		z-index:10;
+		bottom:10px;
+		left:800px;
+	}
+	.banner .b_yq ul li{
+		width:20px;
+		height:20px;
+		border-radius:20px;
+		background:#fff;
+		margin:0 5px;
+	}
+	.banner .b_yq ul .y_li1{
+		background:#0FF;
+	}
+	.banner .jt{
+		width:68px;
+		height:68px;
+		position:absolute;
+		z-index:10;
+		top:300px;
+		display:none;
+	}
+	.banner .b_left{
+		background:url(/static/img/arrows.png) 
+		no-repeat 0 0;
+		left:0;
+		float:left;
+	}
+	.banner .b_left:hover{
+		background-position:0 -68px;
+	}
+	.banner .b_right{
+		background:url(/static/img/arrows.png)
+		 no-repeat -68px 0;
+		 right:0;
+		}
+	.banner .b_right:hover{
+		background-position:-68px -68px;
+	}
+	/* end banner */
+	
+	.content{
+		width:100%;
+		height:90px;
+		margin-top:80px;
+	    background-color:  #1E3E57;
+	}
+	
+	.advertiser{
+		display:block;
+	    width:334px;
+	    position:absolute;
+	    top:120px;
+	    left:20px;
+	    height:340px;
+	    background:url(/static/img//advertiser.png);
+	}
+	
+	.characters-wrap{
+		width: 100%;
+        height:700px;
+        background-color: #FFF;
+		
+	}
+	
+	.identity{
+	width: 1200px;
+	margin:0 auto;
+	position:relative;
+}
+	
+	.identity .Iam{
+		display:block;
+	    width:135px;
+	    position:absolute;
+	    top:500px;
+	    left:40px;
+	    height:60px;
+	    background:url(/static/img/Iam.png);
+	    no-repeat;
+	}
+	
+	.identity .advertiser_1{
+		display:block;
+	    width:131px;
+	    position:absolute;
+	    top:499px;
+	    left:175px;
+	    height:60px;
+	    background:url(/static/img/advertiser_1.png);
+	    no-repeat;
+	}
+	
+    .driver{
+		display:block;
+	    width:334px;
+	    position:absolute;
+	    top:120px;
+	    right:0px;
+	    height:340px;
+	    background:url(/static/img/driver.png);
+	}
+	.identity .Iam_1{
+		display:block;
+	    width:135px;
+	    position:absolute;
+	    top:500px;
+	    right:170px;
+	    height:60px;
+	    background:url(/static/img/Iam.png);
+	    no-repeat;
+	}
+	
+	.identity .driver_1{
+		display:block;
+	    width:131px;
+	    position:absolute;
+	    top:499px;
+	    right:40px;
+	    height:60px;
+	    background:url(/static/img/advertiser_1.png);
+	    no-repeat;
+	}
+		
+		
+		
+.identity{
+	width: 1200px;
+	margin:0 auto;
+	position:relative;
+}
+	
