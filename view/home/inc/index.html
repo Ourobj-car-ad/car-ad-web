@@ -1,0 +1,98 @@
+
+     <div class="od_head_bd">
+        <div class="od_main">
+            <a href="index.html" class="od_logo" alt="老司机"></a>
+            <ul class="od_menu">
+            <li>
+                <a herf="#">About</a></li>
+            <li>
+                <a href="/index/sign" >Sign up</a>
+                </li>
+             <li>
+                <a href="#entrance">Entrance</a></li>
+              <li>
+                <a href="index.html">Home</a></li>
+              </ul>
+         </div>    
+     </div>
+     
+   <!-- banner start-->
+    <div class="banner">
+    	<ul style="margin-left:-285.5px" class="b_ul">
+        	<li class="li_0">
+            	<a></a>
+            </li>
+            <li class="li_1">
+            	<a></a>
+            </li>
+        </ul>
+        
+        <div class="b_yq">
+        	<ul>
+            	<li class="y_li1"></li><li></li>
+            </ul>
+        </div>
+        
+        <div class="jt b_left"></div>
+        <div class="jt b_right"></div>
+    </div>
+    <!-- end banner -->
+    
+    <!-- content start -->
+    <div class="content">
+      <p id="entrance" style="color:#FFF;font-family:Quiksand;font-size:80px;">&nbsp;&nbsp;Entrance</p>
+      </div>
+      <div class="characters-wrap">
+           <div class="identity">
+           <a href="/index_login" class="advertiser" alt="广告商"></a>
+           <a href="" class="Iam"</a>
+           <a href="" class="advertiser_1"</a>
+           <a href="" class="driver" alt="车主"></a>
+           <a href="" class="Iam_1"</a>
+           <a href="" class="driver_1"</a>
+      </div>
+    </div>  
+    <!-- end content -->
+
+    <script type="text/javascript">
+    	$(function(){ 
+			//移到banner上显示左右俩耳朵
+			$(".banner").hover(function(){
+				$(".jt").show();
+			},function(){ 
+				$(".jt").hide();
+			});
+			var index=0;
+			//右耳朵，点击事件
+			$(".banner").find(".b_right").click(function(){ 
+				index++;
+				if(index>1)index=0;
+				$(".b_ul").find("li").eq(index).fadeIn("slow").siblings().hide();
+				$(".b_yq").find("li").eq(index).addClass("y_li1").siblings().removeClass("y_li1");
+			});
+			//左耳朵，点击事件
+			$(".banner").find(".b_left").click(function(){ 
+				index--;
+				if(index<0)index=1;
+				$(".b_ul").find("li").eq(index).fadeIn("slow").siblings().hide();
+				$(".b_yq").find("li").eq(index).addClass("y_li1").siblings().removeClass("y_li1");
+			});
+			//点击原点切换对应图片
+			$(".b_yq").find("li").mouseover(function(){
+				$(this).addClass("y_li1").siblings().removeClass("y_li1");
+				var i = $(this).index();
+				index = i;
+				$(".b_ul").find("li").eq(index).fadeIn("slow").siblings().hide();
+			});
+			//自动循环播放banner
+			setInterval(function(){
+				index++;
+				var length = $(".b_ul").find("li").length;
+				if(index>=length)index=0;
+				$(".b_ul").find("li").eq(index).fadeIn("slow").siblings().hide();
+				$(".b_yq").find("li").eq(index).addClass("y_li1").siblings().removeClass("y_li1");	
+			},3500);
+            
+
+		})
+    </script>

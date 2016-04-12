@@ -1,0 +1,54 @@
+<% include inc/header.html%>
+  
+<% include inc/index.html%>
+     
+         
+		<div id="signin" class="r2-modal in" aria-hidden="false">
+        <div class="r2-modal-headerpic">
+             <img class="picad2" src="/static/img/advertiser_2.png" />
+		    <button type="button" class="r2-close" data-dismiss="modal" hidefocus="true" aria-hidden="true"></button>
+		</div>
+        <div class="r2-modal-fstep">
+             <p class="first">第二步</p>
+             <p class="first-inf">验证个人信息</p>
+         </div>
+         <div class="personal-inf">
+            <div class="realname">
+                <p class="s-realname">真实姓名:</p>
+                <input type="text" value="" name="realname" data-validate="realname" autocomplete="off" class="ipt2  js-own-name"  style="font-size:35px">
+				<p class="rlf-tip-wrap"></p>
+            </div>
+            <div class="phone">
+                <p class="s-phone">手机号:</p>
+                <input type="text" value="" name="phone" data-validate="phone" autocomplete="off" class="ipt2  js-own-name"  style="font-size:35px">
+                <p class="rlf-tip-wrap"></p>
+                
+             </div>
+             <div clss="yan">
+                <p class="s-yan">验证码:</p>
+                <input type="text" name="yan" data-validate="yan" class="ipt2  js-own-name"    autocomplete="off"  style="font-size:35px">
+					        
+                <p class="rlf-tip-wrap"></p>
+                
+             </div>
+             <div clss="pay">
+                <p class="s-pay">绑定支付宝:</p>
+                <input type="text" name="pay" data-validate="pay" class="ipt2  js-own-name"    autocomplete="off"  style="font-size:35px">
+					        
+                <p class="rlf-tip-wrap"></p>
+                
+             </div>
+             <div class="f-footer">
+                 <input type="button" id="next-btn" value="下一步" hidefocus="true" class="btn-next">
+             </div>
+                 
+            
+		</div>
+        
+        
+        
+   
+			 <div class="erweima js-clickToShowDialog"></div>
+		</div>
+		<div class="modal-backdrop  in"></div>
+<% include inc/footer.html%>

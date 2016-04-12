@@ -1,0 +1,52 @@
+<% include inc/header.html%>
+  
+<% include inc/index.html%>    
+     
+         
+		<div id="signin" class="r2-modal in" aria-hidden="false">
+        <div class="r2-modal-headerpic">
+             <img class="picad2" src="/static/img/advertiser_2.png" />
+		    <button type="button" class="r2-close" data-dismiss="modal" hidefocus="true" aria-hidden="true"></button>
+		</div>
+        <div class="r2-modal-fstep">
+             <p class="first">第三步</p>
+             <p class="first-inf">完善基本信息</p>
+         </div>
+         <div class="personal-inf">
+            <div class="gender">
+                <p class="t-gender">性别:</p>
+                <input type="radio" value="female" name="gender" data-validate="gender" autocomplete="off" class="r-female" >
+                <img src="/static/img/female.png" />
+                
+                <input type="radio" value="male" name="gender" data-validate="gender" autocomplete="off" class="r-male">
+                <img src="/static/img/male.png"/>
+				<p class="rlf-tip-wrap"></p>
+            </div>
+            <div class="signemail">
+                <p class="t-work">职业:</p>
+                <input type="text" value="" name="email2" data-validate="email2" autocomplete="off" class="ipt2  js-own-name"  style="font-size:35px">
+                <p class="rlf-tip-wrap"></p>
+                
+             </div>
+             <div clss="photo">
+                <p class="t-phone">头像:</p>  
+                <img class="s-photo" src="/static/img/photo.png"/> 
+                </br>
+                <button type="button" class="c-photo">点击上传照片</button>   
+                <p class="rlf-tip-wrap"></p>
+             </div>
+           
+             <div class="f-footer">
+                 <input type="button" id="next-btn" value="马上体验" hidefocus="true" class="btn-next">
+             </div>
+                 
+            
+		</div>
+        
+        
+        
+   
+			 <div class="erweima js-clickToShowDialog"></div>
+		</div>
+		<div class="modal-backdrop  in"></div>
+<% include inc/footer.html%>
