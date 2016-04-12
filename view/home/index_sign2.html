@@ -2,7 +2,7 @@
 
     <% include inc/index.html%>
      
-     
+    <form id="signup-form" id="form" method="Post" action="/post/sign2" autocomplete="off">
          
 		<div id="signin" class="r2-modal in" aria-hidden="false">
         <div id="dfirstsignstep">
@@ -41,7 +41,10 @@
                 
              </div>
              <div class="f-footer">
-                 <input type="button" id="next_btnd1" onclick="next_btnd1()" value="下一步" hidefocus="true" class="btn-next">
+                 <input type="button" id="next_btnd1" onclick="document.getElementById('dfirstsignstep').style.display='none';	
+                 document.getElementById('dsecondsignstep').style.display='block';	
+                 return false;
+                 " value="下一步" hidefocus="true" class="btn-next">
              </div>
                  
             
@@ -78,7 +81,7 @@
              </div>
              <div class="driving-lic">
                 <p class="s-dri">驾驶证号:</p>
-                 <input type="text" name="driving-lic" data-validate="driving-lic" class="ipt2  js-own-name"    autocomplete="off"  style="font-size:35px">
+                 <input type="text" name="drivinglic" data-validate="drivinglic" class="ipt2  js-own-name"    autocomplete="off"  style="font-size:35px">
 					        
                 <p class="rlf-tip-wrap"></p>
                 
@@ -91,7 +94,10 @@
                 
              </div>
              <div class="f-footer">
-                 <input type="button" id="next_btnd2" onclick="next_btnd2()" value="下一步" hidefocus="true" class="btn-next">
+                 <input type="button" id="next_btnd2" onclick="document.getElementById('dfirstsignstep').style.display='none';
+		    document.getElementById('dsecondsignstep').style.display='none';	
+		    document.getElementById('dthirdsignstep').style.display='block';
+            return false" value="下一步" hidefocus="true" class="btn-next">
              </div>
                  
             
@@ -109,14 +115,14 @@
          <div class="personal-inf">
             <div class="yan">
                 <p class="s-yan">车牌号:</p>
-                <input type="text" name="yan" data-validate="yan" class="ipt2  js-own-name"    autocomplete="off"  style="font-size:35px">
+                <input type="text" name="drivingCode" data-validate="drivingCode" class="ipt2  js-own-name"    autocomplete="off"  style="font-size:35px">
 					        
                 <p class="rlf-tip-wrap"></p>
                 
              </div>
-             <div class="driving-lic">
+             <div class="city">
                 <p class="s-dri">所在城市:</p>
-                 <input type="text" name="driving-lic" data-validate="driving-lic" class="ipt2  js-own-name"    autocomplete="off"  style="font-size:35px">
+                 <input type="text" name="city" data-validate="city" class="ipt2  js-own-name"    autocomplete="off"  style="font-size:35px">
 					        
                 <p class="rlf-tip-wrap"></p>
                 
@@ -124,13 +130,13 @@
              <div clss="photo">
                 <p class="t-carphoto">车辆前部照片:</p>  
                 <img class="s-photo" src="/static/img/photo.png"/> 
-                </br>
+                <br/>
                 <button type="button" class="c-photo">点击上传照片</button>   
                 <p class="rlf-tip-wrap"></p>
              </div>
            
              <div class="f-footer">
-                 <input type="button" id="next_btnd3" onclick="next_btnd3()" value="马上体验" hidefocus="true" class="btn-next">
+                 <input type="submit" id="next_btnd3" value="马上体验" hidefocus="true" class="btn-next">
              </div>
                  
             
@@ -142,18 +148,18 @@
    
 			 <div class="erweima js-clickToShowDialog"></div>
 		</div>
+        
+        </form>
+        
 		<div class="modal-backdrop  in"></div>
 
 
         <script type="text/javascript">
-        function next_btn1(){
-		    document.getElementById('dfirstsignstep').style.display='none';	
-		    document.getElementById('dsecondsignstep').style.display='block';	
+        function next_btnd1(){
+
 		}
-		function next_btn2(){	
-		    document.getElementById('dfirstsignstep').style.display='none';
-		    document.getElementById('dsecondsignstep').style.display='none';	
-		    document.getElementById('dthirdsignstep').style.display='block';
+		function next_btnd2(){	
+
 		}
         function close_sign(){
 		    document.getElementById('dfirstsignstep').style.display='none';

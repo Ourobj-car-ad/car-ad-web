@@ -10,7 +10,7 @@
             <div class="rl-modal-body">
                 <div class="clearfix">
                     <div class="l-left-wrap l">
-                        <form id="signup-form" autocomplete="off">
+                        <form id="signup-form" autocomplete="off" method="Post" action="/post/login">
                             <p class="rlf-tip-globle " id="signin-globle-error"></p>
                             <div class="rlf-group">
                                 <input type="text" value="" name="email" data-validate="email" autocomplete="off" class="ipt ipt-email js-own-name" placeholder="&nbsp;邮箱"
@@ -21,15 +21,11 @@
                                 <a href="javascript:void(0)" hidefocus="true" class="proclaim-btn js-proclaim icon-show-pw is-pwd" tabindex="-1"></a>
                                 <input type="password" name="password" data-validate="password" class="ipt ipt-pwd js-pass-pwd" placeholder="&nbsp;密码 " maxlength="16"
                                 autocomplete="off" style="font-size:35px">
-                                <!--ie8 hack-->
-                                <input type="text" name="password" data-validate="password" class="ipt ipt-pwd js-txt-pwd" placeholder="密码" maxlength="16"
-                                autocomplete="off" style="font-size:35px">
                                 <p class="rlf-tip-wrap"></p>
                             </div>
 
                             <div class="rlf-group clearfix">
-                                <input type="button" id="signin-btn" value="登录" hidefocus="true" class="btn-color btn-full">
-                                <input type="button" id="signup-btn" value="注册" hidefocus="true" class="btn-color2 btn-full2">
+                                <input type="submit" id="signin-btn" value="登录" hidefocus="true" class="btn-color btn-full">
                             </div>
                         </form>
                     </div>

@@ -3,17 +3,17 @@
  * model
  */
 export default class extends think.model.base {
-  async get(name,pwd){
+  async get(email,pwd){
     let model = this.model("user");
     let data = await model.where({
-        name: name,
+        email: email,
         password:pwd,
         }).find();
     return data;
   }
   
-  async add(name,email,pwd,realName,phone,carTravelCode,alipay,carCode,city,carImage){
-    let model = this.model("advertiser");
+  async addOne(name,email,pwd,realName,phone,carTravelCode,alipay,carCode,city,carImage){
+    let model = this.model("user");
     let data = await model.thenAdd({
         name: name,
         email:email,
@@ -24,7 +24,6 @@ export default class extends think.model.base {
         alipay:alipay,
         car_code:carCode,
         city:city,
-        car_image:carImage,
     },{
         name:name
     });

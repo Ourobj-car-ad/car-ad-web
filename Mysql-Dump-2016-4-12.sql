@@ -1,6 +1,6 @@
 -- MySQL dump 10.13  Distrib 5.6.23, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: ourobj-car-ad
+-- Host: 127.0.0.1    Database: ad
 -- ------------------------------------------------------
 -- Server version	5.6.24
 
@@ -84,12 +84,10 @@ CREATE TABLE `car_advertiser` (
   `password` varchar(45) NOT NULL DEFAULT '',
   `email` varchar(45) NOT NULL,
   `phone` varchar(45) NOT NULL,
-  `create_time` datetime NOT NULL,
-  `money` varchar(45) NOT NULL,
+  `create_time` datetime DEFAULT NULL,
+  `money` varchar(45) NOT NULL DEFAULT '0',
   `real_name` varchar(45) NOT NULL,
   `alipay` varchar(45) NOT NULL,
-  `sex` int(1) NOT NULL,
-  `job` varchar(45) NOT NULL,
   `avatar` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `name_UNIQUE` (`name`),
@@ -178,7 +176,7 @@ CREATE TABLE `car_user` (
   `email` varchar(45) NOT NULL,
   `phone` varchar(45) NOT NULL,
   `car_travel_code` varchar(45) NOT NULL,
-  `identity_number` varchar(45) NOT NULL,
+  `identity_number` varchar(45) DEFAULT '1',
   `real_name` varchar(45) NOT NULL,
   `alipay` varchar(45) NOT NULL,
   `car_code` varchar(45) DEFAULT NULL,
@@ -207,4 +205,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-04-12 18:14:48
+-- Dump completed on 2016-04-12 21:34:35

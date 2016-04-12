@@ -3,24 +3,25 @@
  * model
  */
 export default class extends think.model.base {
-  async indexAction(name){
-    let model = this.model("advertiser");
-    let data = await model.where({name: name}).find();
+  async get(email,pwd){
+    let ad = this.model("advertiser");
+    let data = await ad.where({
+        email: email,
+        password:pwd,
+        }).find();
     return data;
   }
   
-  async add(name,email,pwd,realName,phone,alipay,sex,job,avatar){
-    let model = this.model("advertiser");
-    let data = await model.thenAdd({
+  
+  async addOne(name,email,pwd,realName,phone,alipay){
+    let ad = this.model("advertiser");
+    let data = await ad.thenAdd({
         name: name,
         email:email,
         password:pwd,
         real_name:realName,
         phone:phone,
         alipay:alipay,
-        sex:sex,
-        job:job,
-        avatar:avatar,
     },{
         name:name
     });

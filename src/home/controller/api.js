@@ -12,7 +12,7 @@ export default class extends Base {
     let p = this.get();
     
     let data = await instance.get(
-        p.name,
+        p.email,
         p.pwd,
     );
 
@@ -27,17 +27,16 @@ export default class extends Base {
     //return this.success(instance);
     let p = this.get();
     
-    let data = await instance.add(
-        p.name,
-        p.email,
-        p.pwd,
-        p.realName,
+    let data = await instance.addOne(
+        p.nickname2,
+        p.email2,
+        p.spassword,
+        p.realname,
         p.phone,
-        p.carTravelCode,
-        p.alipay,
-        p.carCode,
+        p.drivinglic,
+        p.pay,
+        p.drivingCode,
         p.city,
-        p.carImage
     );
 
     return this.success(data);
