@@ -16,7 +16,7 @@ export default class extends Base {
         p.pwd,
     );
 
-    return this.display(data);
+    return this.success(data);
     
     //return this.success(data);
   }
@@ -40,7 +40,7 @@ export default class extends Base {
         p.carImage
     );
 
-    return this.display(data);
+    return this.success(data);
     
     //return this.success(data);
   }

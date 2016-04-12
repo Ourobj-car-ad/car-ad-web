@@ -1,19 +1,19 @@
 @font-face
 {
     font-family: myFirstFont;
-    src: url('/static/img/MFLiHei_Noncommercial-Regular.otf')
+    src: url('/static/css/MFLiHei_Noncommercial-Regular.otf')
      
 }
 @font-face
 {
     font-family: myFirstFont2;
-    src: url('/static/imgMFYaYuan_Noncommercial-Regular.otf')
+    src: url('/static/css/MFYaYuan_Noncommercial-Regular.otf')
      
 }
 @font-face
 {
     font-family: myFirstFont3;
-    src: url('/static/imgMFShangHei_Noncommercial-Regular.otf')
+    src: url('/static/css/MFShangHei_Noncommercial-Regular.otf')
      
 }
 
@@ -230,7 +230,7 @@
 	    top:120px;
 	    right:0px;
 	    height:340px;
-	    background:url(/static/img//driver.png);
+	    background:url(/static/img/driver.png);
 	}
 	.identity .Iam_1{
 		display:block;
@@ -239,7 +239,7 @@
 	    top:500px;
 	    right:170px;
 	    height:60px;
-	    background:url(/static/img//Iam.png);
+	    background:url(/static/img/Iam.png);
 	    no-repeat;
 	}
 	
@@ -250,7 +250,7 @@
 	    top:499px;
 	    right:40px;
 	    height:60px;
-	    background:url(/static/img//advertiser_1.png);
+	    background:url(/static/img/driver_1.png);
 	    no-repeat;
 	}
 		
@@ -324,7 +324,7 @@
   right: 20px;
   width: 33px;
   height: 33px;
-  background: url(/static/image/img/close.png) no-repeat 0 0;
+  background: url(/static/img/close.png) no-repeat 0 0;
  
 }
 
@@ -335,7 +335,7 @@
   right: 20px;
   width: 33px;
   height: 33px;
-  background: url(/static/image/img/close.png) no-repeat 0 0;
+  background: url(/static/img/close.png) no-repeat 0 0;
  
 }
 

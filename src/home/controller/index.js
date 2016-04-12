@@ -8,54 +8,49 @@ export default class extends Base {
    * @return {Promise} []
    */
   async indexAction(){
-    //auto render template file index_index.html
-    //let instance = this.model("admin");
-    //return this.success(instance);
-    //let data = await instance.selectWithNameAction("admin");
-    //this.assign({
-    //    title:"Name is : " + data.name,
-    //    password: data.password 
-    //});
+
     this.assign({
         title:"老司机网 | 快速承接广告，发布广告"
     })
     return this.display();
     
-    //return this.success(data);
+
   }
   
   async loginAction(){
-    //auto render template file index_index.html
-    //let instance = this.model("admin");
-    //return this.success(instance);
-    //let data = await instance.selectWithNameAction("admin");
-    //this.assign({
-    //    title:"Name is : " + data.name,
-    //    password: data.password 
-    //});
+
     this.assign({
-        title:"登陆"
+        title:"广告商登陆"
     })
     return this.display("index/login");
     
-    //return this.success(data);
+  }
+  
+  async login2Action(){
+
+    this.assign({
+        title:"车主登陆"
+    })
+    return this.display("index/login2");
+    
   }
   
   async signAction(){
-    //auto render template file index_index.html
-    //let instance = this.model("admin");
-    //return this.success(instance);
-    //let data = await instance.selectWithNameAction("admin");
-    //this.assign({
-    //    title:"Name is : " + data.name,
-    //    password: data.password 
-    //});
+
     this.assign({
-        title:"注册"
+        title:"广告商注册"
     })
     return this.display("index/sign");
     
-    //return this.success(data);
+  }
+  
+  async sign2Action(){
+
+    this.assign({
+        title:"车主注册"
+    })
+    return this.display("index/sign2");
+    
   }
   
   

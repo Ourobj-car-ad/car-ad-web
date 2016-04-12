@@ -1,11 +1,56 @@
 <% include inc/header.html%>
-  
-<% include inc/index.html%>
+
+    <% include inc/index.html%>
+     
      
          
 		<div id="signin" class="r2-modal in" aria-hidden="false">
+        <div id="dfirstsignstep">
         <div class="r2-modal-headerpic">
-             <img class="picad2" src="/static/img/advertiser_2.png" />
+             <img class="picad2" src="/static/img/driver_2.png" />
+		    <button type="button" class="r2-close" data-dismiss="modal" hidefocus="true" aria-hidden="true"></button>
+		</div>
+        <div class="r2-modal-fstep">
+             <p class="first">第一步</p>
+             <p class="first-inf">填写注册基本信息</p>
+         </div>
+         <div class="personal-inf">
+            <div class="nickname">
+                <p class="f-nickname">昵称:</p>
+                <input type="text" value="" name="nickname2" data-validate="nickname2" autocomplete="off" class="ipt2  js-own-name"  style="font-size:35px">
+				<p class="rlf-tip-wrap"></p>
+            </div>
+            <div class="signemail">
+                <p class="f-signemail">注册邮箱:</p>
+                <input type="text" value="" name="email2" data-validate="email2" autocomplete="off" class="ipt2  js-own-name"  style="font-size:35px">
+                <p class="rlf-tip-wrap"></p>
+                
+             </div>
+             <div clss="signpw">
+                <p class="f-signpw">密码:</p>
+                <input type="password" name="spassword" data-validate="spassword" class="ipt2  js-pass-pwd"   maxlength="16" autocomplete="off"  style="font-size:35px">
+					        
+                <p class="rlf-tip-wrap"></p>
+                
+             </div>
+             <div clss="signpw2">
+                <p class="f-signpw2">确认密码:</p>
+                <input type="password" name="spassword2" data-validate="spassword2" class="ipt2  js-pass-pwd"   maxlength="16" autocomplete="off"  style="font-size:35px">
+					        
+                <p class="rlf-tip-wrap"></p>
+                
+             </div>
+             <div class="f-footer">
+                 <input type="button" id="next_btnd1" onclick="next_btnd1()" value="下一步" hidefocus="true" class="btn-next">
+             </div>
+                 
+            
+		</div>
+       </div>
+       <div id="dsecondsignstep" style="display:none;">
+       
+       <div class="r2-modal-headerpic">
+             <img class="picad2" src="/static/img/driver_2.png" />
 		    <button type="button" class="r2-close" data-dismiss="modal" hidefocus="true" aria-hidden="true"></button>
 		</div>
         <div class="r2-modal-fstep">
@@ -24,9 +69,16 @@
                 <p class="rlf-tip-wrap"></p>
                 
              </div>
-             <div clss="yan">
+             <div class="yan">
                 <p class="s-yan">验证码:</p>
                 <input type="text" name="yan" data-validate="yan" class="ipt2  js-own-name"    autocomplete="off"  style="font-size:35px">
+					        
+                <p class="rlf-tip-wrap"></p>
+                
+             </div>
+             <div class="driving-lic">
+                <p class="s-dri">驾驶证号:</p>
+                 <input type="text" name="driving-lic" data-validate="driving-lic" class="ipt2  js-own-name"    autocomplete="off"  style="font-size:35px">
 					        
                 <p class="rlf-tip-wrap"></p>
                 
@@ -39,11 +91,51 @@
                 
              </div>
              <div class="f-footer">
-                 <input type="button" id="next-btn" value="下一步" hidefocus="true" class="btn-next">
+                 <input type="button" id="next_btnd2" onclick="next_btnd2()" value="下一步" hidefocus="true" class="btn-next">
              </div>
                  
             
 		</div>
+       </div>
+       <div id="dthirdsignstep" style="display:none;">
+         <div class="r2-modal-headerpic">
+             <img class="picad2" src="/static/img/driver_2.png" />
+		    <button type="button" class="r2-close" data-dismiss="modal" hidefocus="true" aria-hidden="true"></button>
+		</div>
+        <div class="r2-modal-fstep">
+             <p class="first">第三步</p>
+             <p class="first-inf">验证车辆信息</p>
+         </div>
+         <div class="personal-inf">
+            <div class="yan">
+                <p class="s-yan">车牌号:</p>
+                <input type="text" name="yan" data-validate="yan" class="ipt2  js-own-name"    autocomplete="off"  style="font-size:35px">
+					        
+                <p class="rlf-tip-wrap"></p>
+                
+             </div>
+             <div class="driving-lic">
+                <p class="s-dri">所在城市:</p>
+                 <input type="text" name="driving-lic" data-validate="driving-lic" class="ipt2  js-own-name"    autocomplete="off"  style="font-size:35px">
+					        
+                <p class="rlf-tip-wrap"></p>
+                
+             </div>
+             <div clss="photo">
+                <p class="t-carphoto">车辆前部照片:</p>  
+                <img class="s-photo" src="/static/img/photo.png"/> 
+                </br>
+                <button type="button" class="c-photo">点击上传照片</button>   
+                <p class="rlf-tip-wrap"></p>
+             </div>
+           
+             <div class="f-footer">
+                 <input type="button" id="next_btnd3" onclick="next_btnd3()" value="马上体验" hidefocus="true" class="btn-next">
+             </div>
+                 
+            
+		</div>
+       </div>
         
         
         
@@ -51,4 +143,23 @@
 			 <div class="erweima js-clickToShowDialog"></div>
 		</div>
 		<div class="modal-backdrop  in"></div>
-<% include inc/footer.html%>
+
+
+        <script type="text/javascript">
+        function next_btn1(){
+		    document.getElementById('dfirstsignstep').style.display='none';	
+		    document.getElementById('dsecondsignstep').style.display='block';	
+		}
+		function next_btn2(){	
+		    document.getElementById('dfirstsignstep').style.display='none';
+		    document.getElementById('dsecondsignstep').style.display='none';	
+		    document.getElementById('dthirdsignstep').style.display='block';
+		}
+        function close_sign(){
+		    document.getElementById('dfirstsignstep').style.display='none';
+		    document.getElementById('dsecondsignstep').style.display='none';	
+		    document.getElementById('dthirdsignstep').style.display='none';
+        }
+        </script>
+
+        <% include inc/footer.html%>
