@@ -28,14 +28,14 @@ export default class extends Base {
     let p = this.get();
     
     let data = await instance.addOne(
-        p.nickname2,
-        p.email2,
-        p.spassword,
-        p.realname,
+        p.name,
+        p.email,
+        p.pwd,
+        p.realName,
         p.phone,
-        p.drivinglic,
-        p.pay,
-        p.drivingCode,
+        p.carTravelCode,
+        p.alipay,
+        p.carCode,
         p.city,
     );
 

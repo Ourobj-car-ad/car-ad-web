@@ -1,8 +1,8 @@
 {
   "apps": [{
-    "name": "D:opensourcecar-ad-webD:opensourcecar-ad-web",
+    "name": "car-ad-web",
     "script": "www/production.js",
-    "cwd": "D:\opensource\car-ad-web",
+    "cwd": "/alidata/www/car-ad-web",
     "exec_mode": "cluster",
     "instances": 0,
     "max_memory_restart": "1G",
