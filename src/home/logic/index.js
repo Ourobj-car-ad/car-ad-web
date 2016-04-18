@@ -10,6 +10,6 @@ export default class extends think.logic.base {
    * @return {} []
    */
   indexAction(){
-   
+     this.allowMethods = "get,post";
   }
 }
