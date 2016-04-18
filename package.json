@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "babel-runtime": "6.x.x",
+    "jsonwebtoken": "^5.7.0",
     "nunjucks": "^2.2.0",
     "source-map-support": "^0.4.0",
     "thinkjs": "2.2.x"

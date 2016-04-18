@@ -36,6 +36,7 @@ export default class extends Base {
         p.content
     );
 
+
     return this.success(data);
     
 
@@ -95,16 +96,28 @@ export default class extends Base {
     if(!isEmpty){
         await this.session("advertiserId", data.id);
         await this.session("isAdvertiser","true");
+        let tokenService = think.service("token");
+        let tokenServiceInstance = new tokenService();
+        //写入token
+        let token = await tokenServiceInstance.createToken({
+            userInfo: {
+            id: data.id,
+            email: data.email
+            }
+        });
+        //传输客户端token
+        this.http.header("token", token);
+        
         this.assign({
             title:"登陆成功"
-        })
+        });
     }else{
         await this.session();
         this.assign({
             title:"登陆失败"
         })
     }
-    
+
 
     return this.display("index/index");
     //return this.success(data);
@@ -124,6 +137,18 @@ export default class extends Base {
     if(!isEmpty){
         await this.session("userId", data.id);
         await this.session("isUser","true"); 
+        let tokenService = think.service("token");
+        let tokenServiceInstance = new tokenService();
+        //写入token
+        let token = await tokenServiceInstance.createToken({
+            userInfo: {
+            id: data.id,
+            email: data.email
+            }
+        });
+        //传输客户端token
+        this.http.header("token", token);
+        
         this.assign({
             title:"登陆成功"
         })
@@ -151,8 +176,19 @@ export default class extends Base {
         p.phone,
         p.pay,
     );
-
-
+    
+    let tokenService = think.service("token");
+    let tokenInstance = new tokenService();
+    
+    let token = await tokenServiceInstance.createToken({
+        userInfo:{
+            id:data,
+            email:p.email2,
+        }
+    });
+    
+    this.http.header("token",token);
+    
     this.assign({
          title:"注册成功"
      })   
@@ -171,7 +207,7 @@ export default class extends Base {
     let p = this.post();
     //return this.success(p);
     
-    await instance.addOne(
+    let data = await instance.addOne(
         p.nickname2,
         p.email2,
         p.spassword,
@@ -182,6 +218,19 @@ export default class extends Base {
         p.drivingCode,
         p.city,
     );
+
+    let tokenService = think.service("token");
+    let tokenInstance = new tokenService();
+    
+    let token = await tokenServiceInstance.createToken({
+        userInfo:{
+            id:data,
+            email:p.email2,
+        }
+    });
+    
+    this.http.header("token",token);
+    
 
      this.assign({
          title:"注册成功"
