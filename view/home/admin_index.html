@@ -21,7 +21,7 @@
 	<!-- Graph CSS -->
 	<link href="/static/css/font-awesome.css" rel="stylesheet">
 	<!-- jQuery -->
-	<link href='/static/css/roboto.css' rel='stylesheet' type='text/css'>
+	<!--link href='/static/css/roboto.css' rel='stylesheet' type='text/css'-->
 	<!-- lined-icons -->
 	<link rel="stylesheet" href="/static/css/icon-font.min.css" type='text/css' />
 	<!-- //lined-icons -->
@@ -30,7 +30,7 @@
 	<script src="/static/js/serial.js"></script>
 	<script src="/static/js/light.js"></script>
 	<script src="/static/js/radar.js"></script>
-	<link href="/static/css/barChart.css" rel='stylesheet' type='text/css' />
+	<!--link href="/static/css/barChart.css" rel='stylesheet' type='text/css' /-->
 	<link href="/static/css/fabochart.css" rel='stylesheet' type='text/css' />
 	<!--clock init-->
 	<script src="/static/js/css3clock.js"></script>
@@ -38,7 +38,7 @@
 	<!--skycons-icons-->
 	<script src="/static/js/skycons.js"></script>
 
-	<script src="/static/js/jquery.easydropdown.js"></script>
+	<!--script src="/static/js/jquery.easydropdown.js"></script-->
 
 	<!--//skycons-icons-->
 </head>
@@ -224,7 +224,7 @@
 							<div class="col-md-3 widget">
 								<div class="stats-left ">
 									<h5>今日</h5>
-									<h4> 用户</h4>
+									<h4>访问者</h4>
 								</div>
 								<div class="stats-right">
 									<label>90</label>
@@ -234,7 +234,7 @@
 							<div class="col-md-3 widget states-mdl">
 								<div class="stats-left">
 									<h5>今日</h5>
-									<h4>访问者</h4>
+									<h4>活动用户</h4>
 								</div>
 								<div class="stats-right">
 									<label> 85</label>
@@ -244,7 +244,7 @@
 							<div class="col-md-3 widget states-thrd">
 								<div class="stats-left">
 									<h5>今日</h5>
-									<h4>任务</h4>
+									<h4>活动广告商</h4>
 								</div>
 								<div class="stats-right">
 									<label>51</label>
@@ -253,8 +253,8 @@
 							</div>
 							<div class="col-md-3 widget states-last">
 								<div class="stats-left">
-									<h5>今日</h5>
-									<h4>警告</h4>
+									<h5>待审核</h5>
+									<h4>广告</h4>
 								</div>
 								<div class="stats-right">
 									<label>30</label>
@@ -273,53 +273,53 @@
 								<div id="fig">
 									<script type="text/javascript+protovis">
 										/* Parse dates. */
-															var dateFormat = pv.Format.date("%d-%b-%y");
-															vix.forEach(function(d) d.date = dateFormat.parse(d.date));
+										var dateFormat = pv.Format.date("%d-%b-%y");
+										vix.forEach(function(d) d.date = dateFormat.parse(d.date));
 
-															/* Scales. */
-															var w =1220,
-																h = 300,
-																x = pv.Scale.linear(vix, function(d) d.date).range(0, w),
-																y = pv.Scale.linear(vix, function(d) d.low, function(d) d.high).range(0, h).nice();
+										/* Scales. */
+										var w =1220,
+										h = 300,
+										x = pv.Scale.linear(vix, function(d) d.date).range(0, w),
+										y = pv.Scale.linear(vix, function(d) d.low, function(d) d.high).range(0, h).nice();
 
-															var vis = new pv.Panel()
-																.width(w)
-																.height(h)
-																.margin(10)
-																.left(30);
+										var vis = new pv.Panel()
+											.width(w)
+											.height(h)
+											.margin(10)
+											.left(30);
 
-															/* Dates. */
-															vis.add(pv.Rule)
-																 .data(x.ticks())
-																 .left(x)
-																 .strokeStyle("#eee")
-															   .anchor("bottom").add(pv.Label)
-																 .text(x.tickFormat);
+										/* Dates. */
+										vis.add(pv.Rule)
+											.data(x.ticks())
+											.left(x)
+											.strokeStyle("#eee")
+											.anchor("bottom").add(pv.Label)
+											.text(x.tickFormat);
 
-															/* Prices. */
-															vis.add(pv.Rule)
-																 .data(y.ticks(7))
-																 .bottom(y)
-																 .left(-10)
-																 .right(-10)
-																 .strokeStyle(function(d) d % 10 ? "#ddd" : "#ddd")
-															   .anchor("left").add(pv.Label)
-																 .textStyle(function(d) d % 10 ? "#999" : "#ddd")
-																 .text(y.tickFormat);
+										/* Prices. */
+										vis.add(pv.Rule)
+											.data(y.ticks(7))
+											.bottom(y)
+											.left(-10)
+											.right(-10)
+											.strokeStyle(function(d) d % 10 ? "#ddd" : "#ddd")
+											.anchor("left").add(pv.Label)
+											.textStyle(function(d) d % 10 ? "#999" : "#ddd")
+											.text(y.tickFormat);
 
-															/* Candlestick. */
-															vis.add(pv.Rule)
-																.data(vix)
-																.left(function(d) x(d.date))
-																.bottom(function(d) y(Math.min(d.high, d.low)))
-																.height(function(d) Math.abs(y(d.high) - y(d.low)))
-																.strokeStyle(function(d) d.open < d.close ? "#052963" : "#00C6D7")
-															  .add(pv.Rule)
-																.bottom(function(d) y(Math.min(d.open, d.close)))
-																.height(function(d) Math.abs(y(d.open) - y(d.close)))
-																.lineWidth(10);
+										/* Candlestick. */
+										vis.add(pv.Rule)
+											.data(vix)
+											.left(function(d) x(d.date))
+											.bottom(function(d) y(Math.min(d.high, d.low)))
+											.height(function(d) Math.abs(y(d.high) - y(d.low)))
+											.strokeStyle(function(d) d.open < d.close ? "#052963" : "#00C6D7")
+											.add(pv.Rule)
+											.bottom(function(d) y(Math.min(d.open, d.close)))
+											.height(function(d) Math.abs(y(d.open) - y(d.close)))
+											.lineWidth(10);
 
-															vis.render();
+										vis.render();
 									</script>
 									<script type="text/javascript" src="/static/js/protovis-d3.2.js"></script>
 									<script type="text/javascript" src="/static/js/vix.js"></script>
@@ -335,7 +335,7 @@
 					<div class="charts">
 						<div class="bottom-grids">
 							<div class="dev-table">
-								<div class="col-md-4 dev-col">
+								<!--div class="col-md-4 dev-col">
 
 									<div class="dev-widget dev-widget-transparent">
 										<h2 class="inner one">服务器负载</h2>
@@ -346,7 +346,7 @@
 										</div>
 									</div>
 
-								</div>
+								</div-->
 								<div class="col-md-4 dev-col mid">
 
 									<div class="dev-widget dev-widget-transparent dev-widget-success">
@@ -363,8 +363,8 @@
 								<div class="col-md-4 dev-col">
 
 									<div class="dev-widget dev-widget-transparent dev-widget-danger">
-										<h3 class="inner">今日盈利</h3>
-										<p>这里是截至当前今天的盈利</p>
+										<h3 class="inner">今日播放量</h3>
+										<p>这里是今天的广告播放条数</p>
 										<div class="dev-stat">$<span class="counter">5,321</span></div>
 										<div class="progress progress-bar-xs">
 											<div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
@@ -412,34 +412,29 @@
 		<div class="menu">
 			<ul id="menu">
 				<li><a href="#"><i class="fa fa-tachometer"></i> <span>用户管理</span></a></li>
-
-				<li><a href="#"><i class="lnr lnr-pencil"></i> <span>服务器状态</span></a></li>
 				<li id="menu-academico"><a href="#"><i class="lnr lnr-book"></i> <span>广告审核</span></a></li>
 				<li id="menu-academico"><a href="#"><i class="lnr lnr-layers"></i> <span>车主审核</span> </a></li>
-				<li><a href="#"><i class="lnr lnr-chart-bars"></i> <span>BUG报告</span></a></li>
 				<li id="menu-comunicacao"><a href="#"><i class="fa fa-smile-o"></i> <span>进账管理</span></a></li>
 			</ul>
 			<div class="clearfix"></div>
 		</div>
 		<script>
 			var toggle = true || toggle;
-										
+							/*			
 							$(".sidebar-icon").click(function() {                
-							  if (toggle)
-							  {
+							  if (toggle){
 								$(".page-container").addClass("sidebar-collapsed").removeClass("sidebar-collapsed-back");
-								$("#menu span").css({"position":"absolute"});
-							  }
-							  else
-							  {
+								$("#menu").css({"position":"absolute"});
+							  }else{
 								$(".page-container").removeClass("sidebar-collapsed").addClass("sidebar-collapsed-back");
 								setTimeout(function() {
-								  $("#menu span").css({"position":"relative"});
+								  $("#menu").css({"position":"relative"});
 								}, 400);
 							  }
 											
-											toggle = !toggle;
-										});
+							  toggle = !toggle;
+							});
+							*/
 		</script>
 		<!--js -->
 		<link rel="stylesheet" href="/static/css/vroom.css">

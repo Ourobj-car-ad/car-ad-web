@@ -11,7 +11,8 @@ export default class extends Base {
     let adminInfo = await this.session("adminInfo");
     if(!adminInfo || !adminInfo.id){
         this.assign({
-            title:"未登陆!"
+            title:"未登陆!",
+            adminInfo:adminInfo,
         }) 
         return this.display('index/index')
     }
@@ -24,11 +25,22 @@ export default class extends Base {
   
   
   async loginAction(){
-
+    let adminInfo = await this.session("adminInfo");
+    if(!adminInfo || !adminInfo.id){
+        this.assign({
+            title:"管理员登陆",
+            
+        })
+        return this.display("admin/login");
+    } 
+    
     this.assign({
-        title:"管理员登陆"
+        title:'欢迎'
     })
-    return this.display("admin/login");
+    
+    return this.redirect("/admin/index");
+
+
     
   }
   
