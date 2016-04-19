@@ -8,7 +8,16 @@ export default class extends think.model.base {
     let data = await model.where({id: id}).find();
     return data;
   }
-  async addOne(create_time,update_time,price,start_time,end_time,adverser_id,content){
+  
+  async getLast3(){
+    let model = this.model("ad");
+    let data = await model.order({
+      id: "DESC"
+    }).limit(3).select();
+    return data;
+  }
+  
+  async addOne(create_time,update_time,price,start_time,end_time,advertiser_id,content){
     let model = this.model("ad");
     let data = await model.add({
         create_time:create_time,

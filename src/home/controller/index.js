@@ -18,7 +18,11 @@ export default class extends Base {
   }
   
   async loginAction(){
-
+    let advertiserInfo = await this.session("advertiserInfo");
+    if(advertiserInfo && advertiserInfo.id){
+        return this.redirect('/adver/index');
+    }
+    
     this.assign({
         title:"广告商登陆"
     })

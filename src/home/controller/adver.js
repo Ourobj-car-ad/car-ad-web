@@ -15,10 +15,17 @@ export default class extends Base {
         }) 
         return this.display('index/index')
     }
+    
+    let model = this.model("ad");
+    let threeAds = await model.getLast3();
+   
+  // return this.success(threeAds);
 
     this.assign({
         title:"老司机网 | 欢迎您",
         advertiser:advertiserInfo,
+        threeAds:threeAds,
+        
     })
     return this.display();
   }

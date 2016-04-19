@@ -81,7 +81,6 @@ export default class extends Base {
 
   
   async loginAction(){
-
     let instance = this.model("advertiser");
     //return this.success(instance);
     let p = this.post();
@@ -180,7 +179,7 @@ export default class extends Base {
     let tokenService = think.service("token");
     let tokenInstance = new tokenService();
     
-    let token = await tokenServiceInstance.createToken({
+    let token = await tokenInstance.createToken({
         userInfo:{
             id:data,
             email:p.email2,
@@ -222,7 +221,7 @@ export default class extends Base {
     let tokenService = think.service("token");
     let tokenInstance = new tokenService();
     
-    let token = await tokenServiceInstance.createToken({
+    let token = await tokenInstance.createToken({
         userInfo:{
             id:data,
             email:p.email2,

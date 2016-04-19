@@ -10,22 +10,28 @@ export default class extends think.controller.base {
     //this.fail(this.http.action)
     var ac = this.http.action;
     //return this.success(ac);
-    if(ac ==='login'||
+    if (ac ==='login'||
        ac === 'sign'||
        ac === 'index'||
        ac === 'login2'||
        ac === 'sign2' ||
        ac === 'adminlogin'||
        ac === 'show' ||
-       ac === 'logoff')
+       ac === 'logoff'||
+       ac === 'temp' ||
+       ac === 'adver')
       return;
     
     let userToken = this.http.header("token");
-
+    //return this.success('tokenService')
     let tokenService = think.service("token");
+
+    
     let tokenServiceInstance = new tokenService();
 
-    let verifyTokenResult = await tokenServiceInstance.verifyToken(userToken);
+
+    let verifyTokenResult = await tokenServiceInstance
+                          .verifyToken(userToken);
 
     if (verifyTokenResult === "fail") {
       this.fail("TOKEN_INVALID")
