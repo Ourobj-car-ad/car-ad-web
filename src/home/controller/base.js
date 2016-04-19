@@ -7,11 +7,13 @@ export default class extends think.controller.base {
   async __before(action){
     //this.fail(this.http.action)
     var ac = this.http.action;
+    //return this.success(ac);
     if(ac ==='login'||
        ac === 'sign'||
        ac === 'index'||
        ac === 'login2'||
-       ac === 'sign2')
+       ac === 'sign2' ||
+       ac === 'adminlogin')
       return;
     
     let userToken = this.http.header("token");

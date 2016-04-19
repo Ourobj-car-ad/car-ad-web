@@ -95,7 +95,7 @@ export default class extends Base {
     let isEmpty = think.isEmpty(data);
     if(!isEmpty){
         await this.session("advertiserId", data.id);
-        await this.session("isAdvertiser","true");
+        await this.session("isAdvertiser",1);
         let tokenService = think.service("token");
         let tokenServiceInstance = new tokenService();
         //写入token
@@ -242,6 +242,44 @@ export default class extends Base {
     
     //return this.success(data);
   }
+    
+    async adminloginAction(){
+        let p = this.post();
+        
+        let model = this.model("admin");
+        let data = await model.get(
+            p.email,
+            p.password,
+        );
+        
+        let isEmpty = think.isEmpty(data);
+        if(isEmpty){
+            await this.session();
+            this.assign({
+                title:"管理员登陆失败"
+            }) 
+            return this.display("index/index");
+        }else{
+            await this.session("adminId", data.id);
+            await this.session("isAdmin",1);
+            let tokenService = think.service("token");
+            let tokenServiceInstance = new tokenService();
+            //写入token
+            let token = await tokenServiceInstance.createToken({
+                userInfo: {
+                id: data.id,
+                name: data.name
+                }
+            });
+            //传输客户端token
+            this.http.header("token", token);
+            
+            this.assign({
+                title:"老司机网 | 后台管理"
+            })
+            return this.display("admin/index");
+        }
+      }
   
   
 }

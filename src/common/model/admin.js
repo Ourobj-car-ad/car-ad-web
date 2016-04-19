@@ -4,9 +4,12 @@
  */
 export default class extends think.model.base {
 
-  async selectWithNameAction(name){
+  async get(name,pwd){
     let model = this.model("admin");
-    let data = await model.where({name: name}).find();
+    let data = await model.where({
+      name: name,
+      password:pwd
+    }).find();
     return data;
   }
 
