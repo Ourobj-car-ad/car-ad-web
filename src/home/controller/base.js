@@ -13,7 +13,8 @@ export default class extends think.controller.base {
        ac === 'index'||
        ac === 'login2'||
        ac === 'sign2' ||
-       ac === 'adminlogin')
+       ac === 'adminlogin'||
+       ac === 'show')
       return;
     
     let userToken = this.http.header("token");

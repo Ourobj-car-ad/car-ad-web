@@ -8,8 +8,8 @@ export default class extends Base {
    * @return {Promise} []
    */
   async indexAction(){
-
-    if(this.session("isAdmin")!=1){
+    let adminInfo = await this.session("adminInfo");
+    if(!adminInfo || !adminInfo.id){
         this.assign({
             title:"未登陆!"
         }) 
@@ -30,6 +30,11 @@ export default class extends Base {
     })
     return this.display("admin/login");
     
+  }
+  
+  async showAction(){
+      let data = await this.session("adminInfo");
+      this.success(data);
   }
   
   

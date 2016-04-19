@@ -94,8 +94,7 @@ export default class extends Base {
 
     let isEmpty = think.isEmpty(data);
     if(!isEmpty){
-        await this.session("advertiserId", data.id);
-        await this.session("isAdvertiser",1);
+        await this.session("advertiserInfo", data);
         let tokenService = think.service("token");
         let tokenServiceInstance = new tokenService();
         //写入token
@@ -135,8 +134,7 @@ export default class extends Base {
 
     let isEmpty = think.isEmpty(data);
     if(!isEmpty){
-        await this.session("userId", data.id);
-        await this.session("isUser","true"); 
+        await this.session("userInfo", data);
         let tokenService = think.service("token");
         let tokenServiceInstance = new tokenService();
         //写入token
@@ -260,8 +258,7 @@ export default class extends Base {
             }) 
             return this.display("index/index");
         }else{
-            await this.session("adminId", data.id);
-            await this.session("isAdmin",1);
+            await this.session("adminInfo", data);
             let tokenService = think.service("token");
             let tokenServiceInstance = new tokenService();
             //写入token
@@ -277,7 +274,7 @@ export default class extends Base {
             this.assign({
                 title:"老司机网 | 后台管理"
             })
-            return this.display("admin/index");
+            return this.redirect("/admin/index");
         }
       }
   
