@@ -1,0 +1,314 @@
+
+.fh5co-footer-style-1,
+.fh5co-footer-style-2,
+.fh5co-footer-style-3 {
+	padding: 5em 0;
+	@media screen and (max-width: $screen-sm) {
+		padding: 3em 0;
+	}
+}
+.fh5co-footer-style-1 {
+	padding-top: 0;
+	padding-bottom: 0;
+	@include bgImageControls;
+	.p-b {
+		padding-bottom: 20px;
+	}
+	.fh5co-subscribe {
+		padding: 7em 0;
+		@include bgImageControls;
+		position: relative;
+		> .fh5co-overlay {
+			position: absolute;
+			background: $brand-black;
+			opacity: .45;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			z-index: 1;
+		}
+		.form {
+			position: relative;
+			z-index: 3;
+			h2 {
+				color: $brand-white;
+			}
+			p {
+				color: rgba(255,255,255,.8);
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+		.form-group {
+			position: relative;
+			i {
+				font-size: 20px;
+				position: absolute;
+				top: 50%;
+				left: 15px;
+				margin-top: -10px;
+				color: $brand-white;
+			}
+		}
+		.form-control {
+			padding-left: 45px;
+			padding-right: 30px;
+			box-shadow: none;
+			border: none;
+			background: rgba(255,255,255,.15);
+			height: 52px;
+			color: $brand-white;
+			@include fh5co-transition(.3s);
+			&::-webkit-input-placeholder {
+			   color: rgba(255,255,255,.5);
+			}
+
+			&:-moz-placeholder { 
+			   color: rgba(255,255,255,.5);  
+			}
+
+			&::-moz-placeholder {
+			   color: rgba(255,255,255,.5);  
+			}
+
+			&:-ms-input-placeholder {  
+			   color: rgba(255,255,255,.5);  
+			}
+
+			&:focus, &:active {
+				background: rgba(255,255,255,.2);
+			}
+		}
+		.btn {
+			margin-top: 3px;
+			height: 52px;
+		}
+	}
+	.fh5co-footer-inner {
+		padding: 7em 0;
+		font-family: $font-primary;
+		.copyright {
+			margin-bottom: 20px!important;
+			line-height: 1.5;
+		}
+		.fh5co-logo {
+			margin-bottom: 20px;
+			a {
+				padding: 15px 15px;
+				background: rgba(0, 0, 0, .07);
+				font-size: 40px;
+				color: lighten($brand-black, 30%);
+				font-weight: 700;
+				@include inline-block;
+				@include border-radius(4px);
+				font-family: $font-tertiary;
+				&:hover, &:focus {
+					text-decoration: none;
+				}
+			}
+		}
+		h3 {
+			font-size: $font-size-base + 3;
+			font-weight: 400;
+			margin-bottom: 20px;
+			font-family: $font-primary;
+		}
+		p {
+			color: lighten($brand-black, 70%);
+			font-size: $font-size-base - 1;
+			font-weight: 40;
+			font-family: $font-secondary;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		.links {
+			padding: 0;
+			margin: 0 0 20px 0;
+			font-size: $font-size-base - 1;
+			li {
+				list-style: none;
+				font-family: $font-secondary;
+				a {
+					font-size: $font-size-base - 2;
+					color: lighten($brand-black, 50%);
+					&:hover {
+						text-decoration: none;
+						color: $brand-primary;
+					}
+				}
+			}
+		}
+		.fh5co-social {
+			text-align: right;
+			margin-top: 0;
+			@media screen and (max-width: $screen-sm) {
+				text-align: left;
+			}
+			a {
+				margin-right: 15px;
+				margin-bottom: 10px;
+				font-size: 20px;
+				color: lighten($brand-black, 20%);
+				&:hover {
+					text-decoration: none;
+					color: $brand-primary;
+				}
+			}
+		}
+		
+	}
+}
+
+.fh5co-footer-style-2 {
+	background: #232939;	
+	.fh5co-logo {
+		color: $brand-white;
+		font-size: 24px;
+		font-family: $font-tertiary;
+		margin-bottom: 0px;
+		@media screen and (max-width: $screen-xs) {
+			text-align: center;
+		}
+		> span { 
+			font-size: 12px; 
+			color: rgba(255,255,255,.3);
+			@media screen and (max-width: $screen-sm) {
+				display: block;
+			}
+		}
+	}
+	a {
+		color: rgba(255,255,255,.5);
+		&:hover {
+			color: rgba(255,255,255,1);
+		}
+	}
+	.footer-style-2-link {
+		> a {
+			display: none;
+		}
+		text-align: right;
+		@media screen and (max-width: $screen-md) {
+			text-align: left;
+		}
+		ul {
+			padding: 0;
+			margin: 0;
+			@media screen and (max-width: $screen-xs) {
+				margin-bottom: 30px;
+				text-align: center;
+			}
+			@media screen and (max-width: $screen-sm) {
+				margin-bottom: 20px;
+			}
+			li {
+				padding: 0;
+				margin: 0;
+				list-style: none;
+				display: inline;
+				@media screen and (max-width: $screen-xs) {
+					display: block;
+				}
+				a {
+					margin-right: 10px;
+					color: rgba(255,255,255,.5);
+					@media screen and (max-width: $screen-xs) {
+						padding: 4px 0;
+						display: block;
+					}
+					&:hover {
+						color: rgba(255,255,255,1);
+					}
+				}
+				
+
+			}
+		}
+	}
+}
+
+.fh5co-footer-style-3 {
+	background: lighten($brand-black, 15%);
+	font-size: $font-size-base - 1;
+	.fh5co-footer-widget {
+		margin-bottom: 30px;
+	}
+	.fh5co-logo {
+		color: $brand-white;
+		font-size: 24px;
+		font-family: $font-tertiary;		
+		margin-bottom: 40px;
+		.logo {
+			
+			padding: 7px 15px;
+			background: rgba(255,255,255,.1);
+			@include inline-block;
+			@include border-radius(7px);
+		}
+	}
+	.fh5co-copyright {
+		font-size: $font-size-base - 1;
+	}
+	h3 {
+		color: $brand-white;
+		font-family: $font-tertiary;
+		font-size: 11px;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+		margin-top: 15px;
+		margin-bottom: 50px;
+		@media screen and (max-width: $screen-sm) {
+			margin-bottom: 20px;
+		}
+	}
+	p {
+		color: rgba(255,255,255,.5);
+	}
+	a {
+		color: rgba(255,255,255,.3);
+		&:hover {
+			color: rgba(255,255,255,1);
+		}
+	}
+	.btn {
+		border-color: rgba(255,255,255,.1);
+		color: darken($brand-white, 50%);
+	}
+	.fh5co-links {
+		padding: 0;
+		margin: 0;
+		li {
+			padding: 0;
+			margin: 0 0 10px 0;
+			list-style: none;
+
+		}
+		&.fh5co-social {
+			.icon {
+				font-size: $font-size-base + 1;
+				margin-right: 5px;
+				top: 2px;
+				position: relative;
+				@include inline-block;
+			}
+		}
+	}
+	.fh5co-made {
+		text-align: center;
+		border-top: 1px solid rgba(255,255,255,.1);
+		padding-top: 4em;
+		p {
+			font-family: $font-tertiary;
+			font-size: $font-size-base + 8;
+			&:last-child {
+				margin-bottom: 0;
+			}
+			.heart {
+				color: $brand-danger;
+			}
+		}
+	}
+}

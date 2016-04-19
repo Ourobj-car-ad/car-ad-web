@@ -110,15 +110,17 @@ export default class extends Base {
         this.assign({
             title:"登陆成功"
         });
+        return this.redirect("/adver/index");
     }else{
         await this.session();
         this.assign({
             title:"登陆失败"
         })
+        return this.display("index/index");
     }
 
 
-    return this.display("index/index");
+
     //return this.success(data);
   }
   

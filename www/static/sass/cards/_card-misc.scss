@@ -1,0 +1,87 @@
+/* Burger Menu */
+.fh5co-nav-toggle {
+   width:25px;
+   height:25px;
+   cursor: pointer;
+   text-decoration: none;
+   &.active i {
+      &::before, &::after {
+         background: rgba(255,255,255,.5);
+      }
+   }
+   &:hover, &:focus, &:active {
+   	outline: none;
+   	border-bottom: none!important;
+   }
+   i {
+  	   position: relative;
+      @include inline-block;
+      width: 25px;
+      height: 2px;
+      color: $brand-primary;
+      font:bold 14px/.4 Helvetica;
+      text-transform: uppercase;
+      text-indent:-55px;
+      background: rgba(255,255,255,.5);
+      transition: all .2s ease-out;
+         &::before, &::after {
+         content:'';
+         width: 25px;
+         height: 2px;
+         background: rgba(255,255,255,.5);
+         position: absolute;
+         left:0;
+         @include transition(.2s);
+	  }
+  }
+}
+
+.fh5co-nav-toggle i::before {
+   top: -7px;
+}
+.fh5co-nav-toggle i::after {
+   bottom: -7px;
+}
+.fh5co-nav-toggle:hover i::before {
+   top: -10px;
+}
+.fh5co-nav-toggle:hover i::after {
+   bottom: -10px;
+}
+.fh5co-nav-toggle.active i {
+   background: transparent;
+}
+.fh5co-nav-toggle.active i::before {
+   top:0;
+   -webkit-transform: rotateZ(45deg);
+   -moz-transform: rotateZ(45deg);
+   -ms-transform: rotateZ(45deg);
+   -o-transform: rotateZ(45deg);
+   transform: rotateZ(45deg);
+}
+.fh5co-nav-toggle.active i::after {
+   bottom:0;
+   -webkit-transform: rotateZ(-45deg);
+   -moz-transform: rotateZ(-45deg);
+   -ms-transform: rotateZ(-45deg);
+   -o-transform: rotateZ(-45deg);
+   transform: rotateZ(-45deg);
+}
+.fh5co-nav-toggle {
+   position: absolute;
+   top: 0px;
+
+   right: 0px;
+   z-index: 21;
+   padding: 6px 0 0 0;
+   display: block;
+   margin: 0 auto;
+   margin-top: 12px;
+   display: none;
+   height: 44px;
+   width: 44px;
+   border-bottom: none!important;
+   @media screen and (max-width: $screen-sm) {
+      display: block;
+   }
+}

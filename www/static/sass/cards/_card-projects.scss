@@ -1,0 +1,370 @@
+/* PROJECTS STYLE #1 */
+.fh5co-project-style-1,
+.fh5co-project-style-2,
+.fh5co-project-style-3,
+.fh5co-project-style-4 {
+	padding: 5em 0;
+	@media screen and (max-width: $screen-sm) {
+		padding: 3em 0;
+	}
+}
+.fh5co-project-style-1 {
+	
+	.fh5co-grid {
+		@include border-radius(4px);
+		background-size: cover;
+		background-position: center center;
+		overflow: hidden;
+		margin-bottom: 30px;
+		position: relative;
+		> a {
+			@include border-radius(4px);
+			position: absolute;
+			background: $brand-primary;
+			top: 0;
+			bottom: 0;
+			left: 0;
+			right: 0;
+			opacity: 0;
+			@include fh5co-transition(.3s);
+			i {
+				text-align: center;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-top: -20px;
+				margin-left: -20px;
+				font-size: 40px;
+				color: $brand-white;
+			}
+			&:hover {
+				opacity: .9;
+			}
+			
+		}
+	}
+	.fh5co-grid-1 {
+		height: 544px;
+		@media screen and (max-width: $screen-sm) {
+			height: 254px;	
+		}
+	}
+	.fh5co-grid-2 {
+		height: 257px;
+	}
+	.fh5co-grid-3 {
+		height: 257px;
+
+	}
+}
+
+.fh5co-project-style-2 {
+	padding-bottom: 0;
+	.fh5co-projects {
+		ul {
+			padding: 0;
+			margin: 0;
+			li {
+				padding: 0;
+				margin: 0;
+				position: relative;
+				list-style: none;
+				-webkit-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+				-moz-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+				-ms-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+				-o-box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+				box-shadow: inset 0 20px 20px -20px rgba(0,0,0,0.8);
+				background-color: transparent;
+				background-size: cover;
+				background-attachment: fixed;
+				position: relative;
+				a {
+	
+					width: 100%;
+					position: relative;
+					display: block;
+			
+					.fh5co-overlay {
+						background: $brand-black;
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						z-index: 1;
+						opacity: .8;
+						width: 100%;
+						@include fh5co-transition(.5s);
+					}
+					.fh5co-text {
+						display: table;
+						width: 100%;
+						position: relative;
+						z-index: 2;
+						.fh5co-text-inner {
+							display: table-cell;
+							vertical-align: middle;
+							height: 200px;
+							@media screen and (max-width: $screen-sm) {
+								height: inherit;
+								padding: 4em 0;
+							}
+							h3 {
+								margin-bottom: 0;
+								color: $brand-white;
+							}
+							p {
+								font-size: $font-size-base + 4;
+								line-height: 28px;
+								color: rgba(255,255,255,.5);
+								&:last-child {
+									margin-bottom: 0;
+								}
+								@media screen and (max-width: $screen-sm) {
+									font-size: $font-size-base;
+									line-height: 24px;
+								}
+							}
+						}
+					}
+					> .container {
+						position: relative;
+					}
+					&:hover {
+						.fh5co-overlay {
+							opacity: .4;
+						}
+					}
+				}
+				
+
+			}
+		}
+	}
+}
+.fh5co-project-style-3 {
+	.fh5co-project-wrap {
+		position: relative;
+		overflow: hidden;
+	}
+	.fh5co-project-item {
+		position: relative;
+		height: 350px;
+		display: block;
+		margin-bottom: 30px;
+		@include bgImageControls;
+		.fh5co-overlay,
+		.fh5co-text {
+			opacity: 0;
+			@include fh5co-transition(.5s);
+		}
+		.fh5co-overlay {
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			right: 0;
+			left: 0;
+			
+			// background: rgba(63, 63, 63, .5);
+			background: $brand-primary;
+			opacity: 0;
+			z-index: 2;
+		}
+		.fh5co-text {
+			position: absolute;
+			width: 100%;
+			text-align: center;
+			z-index: 3;
+			bottom: 20px;
+			opacity: 0;
+			padding: 0 15px;
+			h3, p {
+				opacity: 0;
+				position: relative;
+				@include fh5co-transition(.5s);
+			}
+			h3 {
+				color: $brand-white;
+				top: -30px;
+				margin-bottom: 10px;
+
+			}
+			p {
+				color: rgba(255,255,255,.6);
+				top: 30px;
+			}
+			
+		}
+		&:hover {
+			.fh5co-overlay {
+				opacity: .9;
+			}
+			.fh5co-text {
+				opacity: 1;
+			}
+
+			h3, p {
+				opacity: 1;
+				top: 0;
+			}
+			
+		}
+
+	}
+}
+
+.fh5co-project-style-4 {
+	.fh5co-heading {
+		margin-bottom: 20px;
+	}
+	.fh5co-meta {
+		color: lighten($brand-black, 70%);
+		margin-bottom: 3em;
+	}
+	.fh5co-checklist {
+		padding-top: 4em;
+		h3 {
+			color: $brand-black;
+			font-size: $font-size-base;
+			margin-bottom: 20px;
+		}
+		ul {
+			padding: 0;
+			margin: 0;
+			li {
+				padding: 0;
+				margin: 0 0 10px 0;
+				list-style: none;
+			}
+		}
+	}
+	.fh5co-share {
+		padding-top: 4em;
+		h3 {
+			color: $brand-black;
+			font-size: $font-size-base;
+			margin-bottom: 20px;
+		}
+		ul {
+			padding: 0;
+			margin: 0;
+			li {
+				padding: 0;
+				margin: 0;
+				list-style: none;
+				display: inline;
+				font-size: $font-size-base - 1;
+				letter-spacing: 1px;
+				a {
+					margin: 0 10px 10px 0;
+				}
+			}
+		}
+	}
+	.fh5co-navigation {
+		.fh5co-icon {
+			font-size: 28px;
+		}
+		.fh5co-prev,
+		.fh5co-next,
+		.fh5co-all {
+			a {
+				font-size: $font-size-base + 4;
+				color: $brand-black;
+				&:hover {
+					color: $brand-primary;
+				}
+			}
+		}
+	}
+}
+
+.fh5co-project-style-5 {
+	background: lighten($brand-black, 97%);
+	.fh5co-project-item {
+		float: left;
+		width: 100%;
+		position: relative;
+		
+		@include flex();
+		@include flexwrap();
+		@media screen and (max-width: $screen-sm) {
+			display: block
+		}
+		.fh5co-project-description,
+		.fh5co-project-figure {
+			width: 50%;
+			@media screen and (max-width: $screen-sm) {
+				display: block;
+				width: 100%;
+			}
+		}
+		.fh5co-project-figure {
+			overflow: hidden;
+			position: relative;
+			> div {
+				position: relative;
+				height: 100%;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				left: 0;
+				right: 0;
+				width: 100%;
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center center;
+				@include fh5co-transition(.5s);
+			}
+			@media screen and (max-width: $screen-sm) {
+				height: 400px;
+			}
+		}
+		.fh5co-project-description {
+			background: $brand-white;
+			padding: 4em;
+			// font-size: 20px;
+			// line-height: 36px;
+			@media screen and (max-width: $screen-lg) {
+				padding: 2em;
+			}
+			@media screen and (max-width: $screen-sm) {
+				padding: 1em;
+				padding-top: 30px;
+			}
+			h2 {
+				font-family: $font-tertiary;
+				font-size: 20px;
+				// line-height: 34px;
+				font-weight: 300;
+			}
+		}
+		&.fh5co-img-right {
+			.fh5co-project-figure {
+				position: absolute;
+				right: 0px;
+				top: 0;
+				bottom: 0;
+				> div {
+					width: 100%;
+					background-repeat: no-repeat;
+					background-size: cover;
+					background-position: center center;
+				}
+				@media screen and (max-width: $screen-sm) {
+					position: relative;
+					top: auto;
+					bototm: auto;
+					height: 400px;
+				}
+			}
+		}	
+		&:focus, &:hover {
+			.fh5co-project-figure {
+				> div {
+					@include fh5co-scale();
+				}
+			}
+		}		
+	}
+}

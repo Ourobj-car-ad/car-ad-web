@@ -1,19 +1,19 @@
 @font-face
 {
     font-family: myFirstFont;
-    src: url('/static/css/MFLiHei_Noncommercial-Regular.otf')
+    src: url('/static/css/index/MFLiHei_Noncommercial-Regular.otf')
      
 }
 @font-face
 {
     font-family: myFirstFont2;
-    src: url('/static/css/MFYaYuan_Noncommercial-Regular.otf')
+    src: url('/static/css/index/MFYaYuan_Noncommercial-Regular.otf')
      
 }
 @font-face
 {
     font-family: myFirstFont3;
-    src: url('/static/css/MFShangHei_Noncommercial-Regular.otf')
+    src: url('/static/css/index/MFShangHei_Noncommercial-Regular.otf')
      
 }
 
@@ -44,7 +44,7 @@
 	top:35px;
 	left:30px;
 	height:78px;
-	background:url(/static/img/logo.png);
+	background:url(/static/img/index/logo.png);
 	no-repeat;
 }
 .od_menu {
@@ -102,7 +102,7 @@
 		left:50%;
 		width:1366px;
 		height:698px;
-		background:url(/static/img/index_1.png);
+		background:url(/static/img/index/index_1.png);
 		background-size:100% 100%; 
 		no-repeat;
 	}
@@ -113,7 +113,7 @@
 		left:50%;
 		width:1366px;
 		height:698px;
-		background:url(/static/img/index_2.png);
+		background:url(/static/img/index/index_2.png);
 		background-size:100% 100%; 
 		no-repeat;
 	}
@@ -151,7 +151,7 @@
 		display:none;
 	}
 	.banner .b_left{
-		background:url(/static/img/arrows.png) 
+		background:url(/static/img/index/arrows.png) 
 		no-repeat 0 0;
 		left:0;
 		float:left;
@@ -160,7 +160,7 @@
 		background-position:0 -68px;
 	}
 	.banner .b_right{
-		background:url(/static/img/arrows.png)
+		background:url(/static/img/index/arrows.png)
 		 no-repeat -68px 0;
 		 right:0;
 		}
@@ -183,7 +183,7 @@
 	    top:120px;
 	    left:20px;
 	    height:340px;
-	    background:url(/static/img/advertiser.png);
+	    background:url(/static/img/index/advertiser.png);
 	}
 	
 	.characters-wrap{
@@ -206,7 +206,7 @@
 	    top:500px;
 	    left:40px;
 	    height:60px;
-	    background:url(/static/img/Iam.png);
+	    background:url(/static/img/index/Iam.png);
 	    no-repeat;
 	}
 	
@@ -217,7 +217,7 @@
 	    top:499px;
 	    left:175px;
 	    height:60px;
-	    background:url(/static/img/advertiser_1.png);
+	    background:url(/static/img/index/advertiser_1.png);
 	    no-repeat;
 	}
 	
@@ -228,7 +228,7 @@
 	    top:120px;
 	    right:0px;
 	    height:340px;
-	    background:url(/static/img/driver.png);
+	    background:url(/static/img/index/driver.png);
 	}
 	.identity .Iam_1{
 		display:block;
@@ -237,7 +237,7 @@
 	    top:500px;
 	    right:170px;
 	    height:60px;
-	    background:url(/static/img/Iam.png);
+	    background:url(/static/img/index/Iam.png);
 	    no-repeat;
 	}
 	
@@ -248,7 +248,7 @@
 	    top:499px;
 	    right:40px;
 	    height:60px;
-	    background:url(/static/img/driver_1.png);
+	    background:url(/static/img/index/driver_1.png);
 	    no-repeat;
 	}
 		
@@ -322,7 +322,7 @@
   right: 20px;
   width: 33px;
   height: 33px;
-  background: url(/static/img/close.png) no-repeat 0 0;
+  background: url(/static/img/index/close.png) no-repeat 0 0;
  
 }
 
@@ -333,7 +333,7 @@
   right: 20px;
   width: 33px;
   height: 33px;
-  background: url(/static/img/close.png) no-repeat 0 0;
+  background: url(/static/img/index/close.png) no-repeat 0 0;
  
 }
 
@@ -389,11 +389,11 @@ input,button{ margin:0; padding:0; list-style-type:none; border:0px}
   border-color: #98a1a6;
 }
 .ipt-email {
-	background: url(/static/img/email.png) no-repeat 330px 10px ;
+	background: url(/static/img/index/email.png) no-repeat 330px 10px ;
   
 }
 .ipt-pwd {
-    background: url(/static/img/pwd.png) no-repeat 330px 10px ;
+    background: url(/static/img/index/pwd.png) no-repeat 330px 10px ;
 }
 
 .rlf-tip-wrap {

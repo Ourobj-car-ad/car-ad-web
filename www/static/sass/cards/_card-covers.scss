@@ -1,0 +1,84 @@
+.fh5co-cover {
+	position: relative;
+	min-height: 800px;
+	.fh5co-cover-text {
+		position: relative;
+		z-index: 5;
+		.full-height {
+			display: table;
+			min-height: 800px;
+			.fh5co-cover-intro {
+				display: table-cell;
+				vertical-align: middle;
+				min-height: 800px;
+			}
+		}
+		.cover-text-lead {
+			font-size: $font-size-base + 24;
+			font-family: $font-tertiary;
+			font-weight: 700;
+			color: $brand-white;
+		}
+		.cover-text-sublead {
+			font-size: $font-size-base;
+			font-family: $font-secondary;
+			font-weight: 400;
+			line-height: $font-size-base + 10;
+			color: $brand-white;
+		}
+		.btn-outline {
+			border: 2px solid $brand-white;
+			color: $brand-white;
+			@include fh5co-transition(.3s);
+			&:hover {
+				color: $brand-white;
+				background: $brand-primary;
+				border-color: $brand-primary;
+
+			}
+			&:hover, &:focus, &:active {
+				outline: none;
+			}
+		}
+	}
+}
+
+/* COVER STYLE #1 */
+.fh5co-cover-style-1 {
+	background-color: transparent;
+	background-size: cover;
+	background-attachment: fixed;
+	position: relative;
+	width: 100%;
+	position: relative;
+	> .fh5co-overlay {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: rgba(0, 0, 0, .6);
+		z-index: 4;
+	}
+}
+
+/* COVER STYLE #2 */
+.fh5co-cover-style-2 {
+	background-color: transparent;
+	background-size: cover;
+	background-attachment: fixed;
+	position: relative;
+	width: 100%;
+	position: relative;
+	> .fh5co-overlay {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: rgba(0, 0, 0, .6);
+		z-index: 4;
+	}
+}
+
+

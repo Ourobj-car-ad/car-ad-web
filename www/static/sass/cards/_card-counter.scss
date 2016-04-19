@@ -1,0 +1,75 @@
+.fh5co-counter-style-1,
+.fh5co-counter-style-2 {
+	background-color: transparent;
+	background-size: cover;
+	background-attachment: fixed;
+	position: relative;
+	@media screen and (max-width: $screen-sm) {
+		padding: 3em 0;
+	}
+	.fh5co-overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(0, 0, 0, .6);
+	}
+	&, .fh5co-section-content-wrap {
+		height: 500px;
+		width: 100%;
+		@media screen and (max-width: $screen-md) {
+			height: inherit;
+		}
+	}
+	.fh5co-section-content-wrap {
+		display: table;
+		.fh5co-section-content {
+			width: 100%;
+			display: table-cell;
+			vertical-align: middle;
+		}
+	}
+	.fh5co-counter {
+		font-size: 50px;
+		display: block;
+		color: $brand-white;
+		width: 100%;
+		font-family: $font-primary;
+		margin-bottom: .5em;
+	}
+	.fh5co-counter-label {
+		color: $brand-white;
+		text-transform: uppercase;
+		font-size: 13px;
+		font-family: $font-tertiary;
+		letter-spacing: 5px;
+		margin-bottom: 2em;
+		display: block;
+	}
+}
+
+.fh5co-counter-style-2 {
+	.icon {
+		color: $brand-white;
+		width: 70px;
+		height: 70px;
+		margin: 0 auto 30px auto;
+		text-align: center;
+		position: relative;
+		border: 2px solid rgba(255,255,255,.1);
+		@include border-radius(50%);
+		i {
+			text-align: center;
+			width: 100%;
+			font-size: 30px;
+			display: block;
+			top: 50%;
+			margin-top: -15px;
+			position: absolute;
+		}
+	}
+	.fh5co-counter-label {
+		color: rgba(255,255,255,.5);
+	}
+}

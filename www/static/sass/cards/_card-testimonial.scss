@@ -1,0 +1,116 @@
+.fh5co-testimonial-style-1,
+.fh5co-testimonial-style-2 {
+	padding: 5em 0;
+	@media screen and (max-width :$screen-sm) {
+		padding: 3em 0;
+	}
+}
+
+.fh5co-testimonial-style-1 {
+	background: lighten($brand-black, 95%);
+	.box-testimony {
+		margin-bottom: 2em;
+		float: left;
+		blockquote {
+			padding-left: 0;
+			border-left: none;
+			padding: 40px;
+			background: $brand-white;
+			
+			position: relative;
+			@include border-radius(4px);
+			&:after {
+			   content: "";
+			   position: absolute;
+			   top: 100%;
+			   left: 40px;
+			   border-top: 15px solid black;
+			   border-top-color: $brand-white; 
+			   border-left: 15px solid transparent;
+			   border-right: 15px solid transparent; 
+			}
+			.quote {
+				position: absolute;
+				top: 0;
+				left: 10px;
+				text-align: center;
+				font-size: 24px;
+				line-height: 0;
+				display: table;
+				color: $brand-primary;
+				width: 56px;
+				height: 56px;
+				margin-top: -30px;
+				background: lighten($brand-black, 95%);
+				@include border-radius(50%);
+				> span {
+					display: table-cell;
+					vertical-align: middle;
+				}
+			}
+			p {
+				font-style: italic;
+			}
+		}
+		.author {
+			// line-height: 20px;
+			color: lighten($brand-black, 50%);
+			// font-size: 20px;
+			margin-left: 20px;
+			font-size: $font-size-base - 1;
+			.subtext {
+				display: block;
+				color: lighten($brand-black, 80%);
+				font-size: 16px;
+			}
+		}
+	}
+}
+
+.fh5co-testimonial-style-2 {
+	.fh5co-testimonial-item {
+		margin-bottom: 30px;
+		float: left;
+		width: 100%;
+		.fh5co-name {
+			margin-bottom: 30px;
+			float: left;
+			img {
+				width: 70px;
+				float: left;
+				margin-right: 20px;
+				@include border-radius(50%);
+			}
+			.fh5co-meta {
+				float: left;
+				margin-top: 15px;	
+				h3 {
+					margin-bottom: 0;
+					font-weight: bold;
+					font-size: $font-size-base;
+				}
+				.fh5co-company {
+					font-weight: bold;
+					text-transform: uppercase;
+					letter-spacing: 2px;
+					color: lighten($brand-black, 80%);
+					font-size: 11px!important;
+				}
+			}
+		}
+		.fh5co-text {
+			font-family: $font-serif;
+			font-size: $font-size-base;
+			float: left;
+			width: 100%;
+			clear: both;
+			p {
+				font-style: italic;
+				line-height: 28px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+}

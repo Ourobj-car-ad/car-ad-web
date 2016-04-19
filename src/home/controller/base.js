@@ -1,5 +1,7 @@
 'use strict';
 
+let user;
+
 export default class extends think.controller.base {
   /**
    * some base method in here
@@ -14,7 +16,8 @@ export default class extends think.controller.base {
        ac === 'login2'||
        ac === 'sign2' ||
        ac === 'adminlogin'||
-       ac === 'show')
+       ac === 'show' ||
+       ac === 'logoff')
       return;
     
     let userToken = this.http.header("token");

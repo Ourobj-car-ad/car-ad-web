@@ -12,13 +12,13 @@ export default class extends Base {
     if(!adminInfo || !adminInfo.id){
         this.assign({
             title:"未登陆!",
-            adminInfo:adminInfo,
         }) 
         return this.display('index/index')
     }
 
     this.assign({
-        title:"老司机网 | 后台管理"
+        title:"老司机网 | 后台管理",
+        adminInfo:adminInfo,
     })
     return this.display();
   }
@@ -29,7 +29,6 @@ export default class extends Base {
     if(!adminInfo || !adminInfo.id){
         this.assign({
             title:"管理员登陆",
-            
         })
         return this.display("admin/login");
     } 

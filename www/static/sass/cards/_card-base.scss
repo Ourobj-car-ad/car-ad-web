@@ -1,0 +1,344 @@
+html.mobile-menu-expanded {
+	overflow: hidden;
+}
+
+body {
+	font-family: $font-secondary;
+	font-size: $font-size-base; // 16px
+	line-height: $font-size-base + 10; // 26
+	color: lighten($brand-black, 50%);
+	font-weight: 400;
+	@media screen and (max-width: $screen-xs) {
+		min-width: 320px;
+		float: left;
+		width: 100%;
+	}
+}
+h1, h2, h3, h4, h5, h6 {
+	margin: 0 0 30px 0;
+	padding: 0;
+	font-family: $font-tertiary;
+	font-weight: 700;
+	color: lighten($brand-black, 15%);
+}
+p {
+	margin-bottom: 30px;
+}
+h1 {
+	font-size: 40px;
+}
+h2 {
+	font-size: 35px;
+	font-weight: 700;
+}
+
+a {
+	color: $brand-primary;
+	@include fh5co-transition(.5s);
+	&:hover, &:focus, &:active {
+		outline: none;
+		text-decoration: none;
+	}
+}
+
+// Buttons
+.btn {
+	margin-right: 4px;
+	margin-bottom: 4px;
+	font-family: $font-primary;
+	font-size: 12px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	font-weight: 700;
+	@include border-radius(4px);
+	@include transition(.5s);
+	&.btn-md {
+		padding: 10px 20px!important;
+	}
+	&.btn-lg {
+		padding: 18px 36px!important;
+	}
+	&:hover, &:active, &:focus {
+		box-shadow: none!important;
+		outline: none!important;
+	}
+}
+.btn-primary {
+	background: $brand-primary;
+	color: $brand-white;
+	border: 2px solid $brand-primary;
+	&:hover, &:focus, &:active {
+		background: darken($brand-primary, 5%)!important;
+		border-color: darken($brand-primary, 5%)!important;
+	}
+	&.btn-outline {
+		background: transparent;
+		color: $brand-primary;
+		border: 2px solid $brand-primary;
+		&:hover, &:focus, &:active {
+			background: $brand-primary;
+			color: $brand-white;
+		}
+	}
+}
+.btn-success {
+	background: $brand-success;
+	color: $brand-white;
+	border: 2px solid $brand-success;
+	&:hover, &:focus, &:active {
+		background: darken($brand-success, 5%)!important;
+		border-color: darken($brand-success, 5%)!important;
+	}
+	&.btn-outline {
+		background: transparent;
+		color: $brand-success;
+		border: 2px solid $brand-success;
+		&:hover, &:focus, &:active {
+			background: $brand-success;
+			color: $brand-white;
+		}
+	}
+}
+.btn-info {
+	background: $brand-info;
+	color: $brand-white;
+	border: 2px solid $brand-info;
+	&:hover, &:focus, &:active {
+		background: darken($brand-info, 5%)!important;
+		border-color: darken($brand-info, 5%)!important;
+	}
+	&.btn-outline {
+		background: transparent;
+		color: $brand-info;
+		border: 2px solid $brand-info;
+		&:hover, &:focus, &:active {
+			background: $brand-info;
+			color: $brand-white;
+		}
+	}
+}
+.btn-warning {
+	background: $brand-warning;
+	color: $brand-white;
+	border: 2px solid $brand-warning;
+	&:hover, &:focus, &:active {
+		background: darken($brand-warning, 5%)!important;
+		border-color: darken($brand-warning, 5%)!important;
+	}
+	&.btn-outline {
+		background: transparent;
+		color: $brand-warning;
+		border: 2px solid $brand-warning;
+		&:hover, &:focus, &:active {
+			background: $brand-warning;
+			color: $brand-white;
+		}
+	}
+}
+.btn-danger {
+	background: $brand-danger;
+	color: $brand-white;
+	border: 2px solid $brand-danger;
+	&:hover, &:focus, &:active {
+		background: darken($brand-danger, 5%)!important;
+		border-color: darken($brand-danger, 5%)!important;
+	}
+	&.btn-outline {
+		background: transparent;
+		color: $brand-danger;
+		border: 2px solid $brand-danger;
+		&:hover, &:focus, &:active {
+			background: $brand-danger;
+			color: $brand-white;
+		}
+	}
+}
+
+.btn-outline {
+	background: none;
+	border: 2px solid lighten($brand-black, 50%);
+	font-size: 12px;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	@include fh5co-transition(.3s);
+	&:hover, &:focus, &:active {
+		box-shadow: none;
+	}
+}
+
+// Links
+.lnk-primary {
+	color: $brand-primary;
+	&:hover, &:focus, &:active {
+		color: darken($brand-primary, 5%);
+	}
+}
+.lnk-success {
+	color: $brand-success;
+	&:hover, &:focus, &:active {
+		color: darken($brand-success, 5%);
+	}
+}
+.lnk-info {
+	color: $brand-info;
+	&:hover, &:focus, &:active {
+		color: darken($brand-info, 5%);
+	}
+}
+.lnk-warning {
+	color: $brand-warning;
+	&:hover, &:focus, &:active {
+		color: darken($brand-warning, 5%);
+	}
+}
+.lnk-danger {
+	color: $brand-danger;
+	&:hover, &:focus, &:active {
+		color: darken($brand-danger, 5%);
+	}
+}
+a {
+	.lnk-icon-right {
+		top: 2px;
+		position: relative;
+		@include inline-block;
+		@include fh5co-transition(.3s);
+	}
+	&:hover {
+		.lnk-icon-right {
+			padding-left: 5px;
+		}
+	}
+}
+
+/* Scroll Animations */
+@-webkit-keyframes ani-mouse {
+	0% {
+	opacity: 1;
+	top: 29%;
+	}
+	15% {
+	opacity: 1;
+	top: 50%;
+	}
+	50% {
+	opacity: 0;
+	top: 50%;
+	}
+	100% {
+	opacity: 0;
+	top: 29%;
+	}
+}
+@-moz-keyframes ani-mouse {
+	0% {
+	opacity: 1;
+	top: 29%;
+	}
+	15% {
+	opacity: 1;
+	top: 50%;
+	}
+	50% {
+	opacity: 0;
+	top: 50%;
+	}
+	100% {
+	opacity: 0;
+	top: 29%;
+	}
+}
+@keyframes ani-mouse {
+	0% {
+	opacity: 1;
+	top: 29%;
+	}
+	15% {
+	opacity: 1;
+	top: 50%;
+	}
+	50% {
+	opacity: 0;
+	top: 50%;
+	}
+	100% {
+	opacity: 0;
+	top: 29%;
+	}
+}
+ .scroll-btn {
+	display: block;
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	text-align: center;
+	z-index: 15;
+}
+.scroll-btn > * {
+	display: inline-block;
+	line-height: 18px;
+	font-size: 13px;
+	font-weight: normal;
+	color: #7f8c8d;
+	color: #ffffff;
+	font-family: Arial, sans-serif;
+	letter-spacing: 2px;
+}
+.scroll-btn > *:hover,
+.scroll-btn > *:focus,
+.scroll-btn > *.active {
+	color: #ffffff;
+}
+.scroll-btn > *:hover,
+.scroll-btn > *:focus,
+.scroll-btn > *:active,
+.scroll-btn > *.active {
+	opacity: 0.8;
+	filter: alpha(opacity=80);
+}
+.scroll-btn .mouse {
+	position: relative;
+	display: block;
+	width: 30px;
+	height: 45px;
+	margin: 0 auto 20px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	border: 2px solid white;
+	border-radius: 23px;
+}
+.scroll-btn .mouse > * {
+	position: absolute;
+	display: block;
+	top: 29%;
+	left: 50%;
+	width: 2px;
+	height: 6px;
+	margin: -2px 0 0 -1px;
+	background: white;
+	// border-radius: 50%;
+	-webkit-animation: ani-mouse 2.5s linear infinite;
+	-moz-animation: ani-mouse 2.5s linear infinite;
+	animation: ani-mouse 2.5s linear infinite;
+}
+
+
+
+
+/* Utilities */
+.fh5co-flex {
+	@include flex;
+}
+.p-b {
+	padding-bottom: 50px;
+}
+
+@media screen and ( max-width: 480px ) {
+	.col-xxs-12 {
+		float: none!important;
+		width: 100%!important;
+		display: block!important;
+	}
+}

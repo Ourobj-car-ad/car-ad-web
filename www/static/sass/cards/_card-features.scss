@@ -1,0 +1,315 @@
+/* FEATURE STYLE #1 */
+.fh5co-features-style-1,
+.fh5co-features-style-2,
+.fh5co-features-style-3,
+.fh5co-features-style-4,
+.fh5co-features-style-5 {
+	padding: 5em 0;
+	@media screen and (max-width: $screen-sm) {
+		padding: 3em 0;
+	}
+}
+.fh5co-features-style-1,
+.fh5co-features-style-5 {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center center;
+	position: relative;
+	> .fh5co-overlay {
+		background: rgba(0,0,0,.5);
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 2;
+	}
+	.fh5co-heading {
+		color: $brand-white;
+	}
+	h3 {
+		font-weight: 400;
+		font-size: 17px;
+		text-transform: uppercase;
+		margin-bottom: 10px;
+	}
+	h3 {
+		color: $brand-white;
+	}
+	p {
+		color: rgba(255,255,255,.7);
+	}
+
+	.fh5co-features {
+		width: 100%;
+		@include flex;
+		@include flexwrap;		
+
+		padding-left: 15px;
+		padding-right: 15px;
+		.fh5co-feature {
+			padding-left: 30px;
+			padding-right: 30px;
+			padding-top: 3em;
+			padding-bottom: 3em;
+			text-align: center;
+			flex-grow: 1;
+			width: 33%;
+			border-right: 1px solid rgba(255,255,255,.2);
+			border-bottom: 1px solid rgba(255,255,255,.2);
+			&:nth-of-type(3n+0) {
+				border-right: none;
+			}
+			.icon {
+				color: $brand-warning;
+				margin-bottom: 20px;
+				i {
+					font-size: 40px;
+				}
+			}
+			&:nth-last-child(1),
+			&:nth-last-child(2),
+			&:nth-last-child(3) {
+				border-bottom: none;
+			}
+			@media screen and (max-width: $screen-sm) {
+				border-right: 1px solid rgba(255,255,255,.2)!important;
+				width: 50%;
+				&:nth-of-type(2n+0) {
+					border-right: none!important;
+				}
+				&:nth-last-child(3) {
+					border-bottom: 1px solid rgba(255,255,255,.2);
+				}
+				&:nth-last-child(1),
+				&:nth-last-child(2){
+					border-bottom: none;
+				}
+			}
+			@media screen and (max-width: $screen-xs) {
+				width: 100%;
+				border-right: none!important;
+				border-bottom: 1px solid rgba(255,255,255,.2)!important;
+			}
+		}
+	}
+}
+.fh5co-features-style-1 {
+	background-color: transparent;
+	background-size: cover;
+	background-attachment: fixed;
+	position: relative;
+	background-position: left top;
+	> .fh5co-overlay {
+		background: rgba(0,0,0,.6);
+	}
+}
+.fh5co-features-style-2 {
+	.fh5co-feature {
+		margin-bottom: 30px;
+		float: left;
+		clear: right;
+		.fh5co-icon {
+			float: left;
+			width: 20%;
+			i {
+				font-size: 40px;
+				color: $brand-success;
+			}
+		}
+		.fh5co-desc {
+			width: 80%;
+			float:right;
+			h3 {
+				margin-top: 0;
+				font-size: 18px;
+			}
+		}
+	}
+}
+
+.fh5co-features-style-3 {
+	background: lighten($brand-black, 98%);
+	.box {
+		padding: 30px;
+		background: $brand-white;
+		text-align: center;
+		color: #7f7f7f;
+		margin-bottom: 70px;
+		position: relative;
+		@media screen and (max-width: $screen-md) {
+			min-height: inherit;
+			margin-bottom: 60px;
+		}
+		.icon {
+			width: 85px;
+			height: 85px;
+			margin: 0 auto;
+			top: 0;
+			margin-top: -70px;
+			margin-bottom: 30px;
+			position: relative;
+			@include border-radius(50%);
+			display: table;
+			text-align: center;
+			> span {
+				display: table-cell;
+				vertical-align: middle;
+				i {
+					font-size: 40px;
+					color: $brand-white!important;
+					margin: 0;
+					padding: 0;
+				}
+			}
+			&.colored-1 {
+				background: #2aaf67;
+			}
+			&.colored-2 {
+				background: #00bff3;
+			}
+			&.colored-3 {
+				background: #f26522;
+			}
+			&.colored-4 {
+				background: #e52b50;
+			}
+			&.colored-5 {
+				background: #2fc5cc;
+			}
+			&.colored-6 {
+				background: #6173f4;
+			}
+		}
+		.step-number {
+			font-size: 16px;
+			display: block;
+			color: #d1d1d1;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			font-weight: 700;
+			margin-bottom: 10px;
+		}
+		h3 {
+			margin: 0 0 20px 0;
+			padding: 0;
+			font-weight: 400;
+			font-size: 20px;
+			color: $brand-black;
+		}
+	}
+}
+
+.fh5co-features-style-4 {
+	background: $brand-success;
+	.fh5co-section-heading {
+		.fh5co-heading {
+			color: $brand-white;
+		}
+		p {
+			color: rgba(255,255,255,.7);
+		}
+	}
+	.fh5co-feature-item {
+		background: $brand-white;
+		float: left;
+		margin-bottom: 30px;
+		position: relative;
+		overflow: hidden;
+		@include flex;
+		@include border-radius(7px);
+		@media screen and (max-width: $screen-xs) {
+			display: block!important;
+		}
+		.fh5co-feature-text,
+		.fh5co-feature-img {
+			width: 50%;
+			@media screen and (max-width: $screen-xs) {
+				height: inherit;
+				float: none!important;
+				width: 100%;
+				display: block!important;
+			}
+		}
+		.fh5co-feature-text {
+			float: left;
+			padding: 20px;
+			.fh5co-feature-title {
+		
+				margin: 0 0 20px 0;
+				padding: 0 0 10px 0;
+				font-weight: 400;
+				font-size: 20px;
+				color: $brand-black;
+				position: relative;
+				.fh5co-border {
+					position: absolute;
+					left: 0;
+					bottom: 0;
+					height: 2px;
+					width: 30px;
+					background: $brand-success;
+				}
+			}
+		}
+		.fh5co-feature-img {
+			position: absolute;
+			right: 0;
+			bottom: 0;
+			top: 0;
+			background-size: cover;
+			@media screen and (max-width: $screen-xs) {
+				height: 200px;
+				left: 0;
+				top: 0;
+				position: relative;
+				width: 100%;
+			}
+		}
+	}
+}
+
+.fh5co-features-style-5 {
+	background: #232939;
+	h3 {
+		color: $brand-white;
+	}
+	p {
+		color: rgba(255,255,255,.4);
+	}
+	.fh5co-features {
+		.fh5co-feature {
+			padding-top: 1em!important;
+			padding-bottom: 1em!important;
+			border-right: 1px solid rgba(255,255,255,.05);
+			border-bottom: 1px solid rgba(255,255,255,.05);
+
+			border-right: none!important;
+			border-bottom: none!important;
+			@media screen and (max-width: $screen-sm) {
+				border-right: 1px solid rgba(255,255,255,.05)!important;
+				border-right: none!important;
+			}
+			@media screen and (max-width: $screen-xs) {
+				border-bottom: 1px solid rgba(255,255,255,.05)!important;
+				border-bottom: none!important;
+			}
+		}
+	}
+	
+	.icon {
+		color: $brand-success!important;
+		border: 1px solid rgba(255,255,255,.1);
+		margin-bottom: 20px;
+		display: table;
+		width: 90px;
+		height: 90px;
+		margin: 0 auto;
+		@include border-radius(50%);
+		i {
+			display: table-cell;
+			vertical-align: middle;
+			font-size: 40px;
+		}
+	}
+}
