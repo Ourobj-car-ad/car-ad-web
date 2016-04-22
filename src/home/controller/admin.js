@@ -8,6 +8,7 @@ export default class extends Base {
    * @return {Promise} []
    */
   async indexAction(){
+    //return this.success(this.http.header())
     let adminInfo = await this.session("adminInfo");
     if(!adminInfo || !adminInfo.id){
         this.assign({
@@ -44,7 +45,8 @@ export default class extends Base {
   }
   
   async showAction(){
-      let data = await this.session("adminInfo");
+      let data = await this.session("token");
+      //let data = this.http.headers;
       this.success(data);
   }
   

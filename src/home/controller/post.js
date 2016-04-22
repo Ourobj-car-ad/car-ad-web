@@ -104,8 +104,8 @@ export default class extends Base {
             }
         });
         //传输客户端token
-        this.http.header("token", token);
-        
+        //this.http.header("token", token);
+        await this.session("token",token);
         this.assign({
             title:"登陆成功"
         });
@@ -146,8 +146,8 @@ export default class extends Base {
             }
         });
         //传输客户端token
-        this.http.header("token", token);
-        
+        //this.http.header("token", token);
+        await this.session("token",token);
         this.assign({
             title:"登陆成功"
         })
@@ -186,8 +186,8 @@ export default class extends Base {
         }
     });
     
-    this.http.header("token",token);
-    
+    //this.http.header("token",token);
+    await this.session("token",token);
     this.assign({
          title:"注册成功"
      })   
@@ -228,8 +228,8 @@ export default class extends Base {
         }
     });
     
-    this.http.header("token",token);
-    
+    //this.http.header("token",token);
+    await this.session("token",token);
 
      this.assign({
          title:"注册成功"
@@ -279,12 +279,16 @@ export default class extends Base {
                 }
             });
             //传输客户端token
-            this.http.header("token", token);
-            
+            //return this.success(token);
+            //return this.success(this.http.headers);
+            await this.session("token",token);
+            //this.http.header("token", token);
+            //return this.success(this.http.headers);
+            //return this.success("SUCCESS");
             this.assign({
                 title:"老司机网 | 后台管理"
             })
-            return this.redirect("/admin/index");
+            return this.display("admin/index");
         }
       }
   

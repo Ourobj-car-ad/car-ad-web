@@ -7,26 +7,26 @@ export default class extends think.controller.base {
    * some base method in here
    */
   async __before(action){
-    //this.fail(this.http.action)
+    //return this.fail(this.http)
     var ac = this.http.action;
+    //return this.json(this.http.header());
+    
+    var permit = [
+      "login","sign",
+      "login2","sign2",
+      "index",
+      "adminlogin","adminlogoff",
+      "show",
+      //"review"
+    ]
+    
     //return this.success(ac);
-    if (ac ==='login'||
-       ac === 'sign'||
-       ac === 'index'||
-       ac === 'login2'||
-       ac === 'sign2' ||
-       ac === 'adminlogin'||
-       ac === 'adminlogoff'||
-       ac === 'show' ||
-       ac === 'logoff'||
-       ac === 'temp' ||
-       ac === 'adver' ||
-       ac === 'review' )
+    if (permit.indexOf(ac)!=-1)
       return;
     
-    let userToken = this.http.header("token");
-    
-    //return this.success(userToken);
+    //let userToken = this.http.header("token");
+    let userToken = await this.session("token");
+
     //return this.success('tokenService')
     let tokenService = think.service("token");
 
