@@ -26,7 +26,7 @@ export default class extends Base {
   
   async loginAction(){
     let adminInfo = await this.session("adminInfo");
-    if(!adminInfo || !adminInfo.id){
+    if(!adminInfo || !adminInfo.admin_id){
         this.assign({
             title:"管理员登陆",
         })
@@ -46,6 +46,21 @@ export default class extends Base {
   async showAction(){
       let data = await this.session("adminInfo");
       this.success(data);
+  }
+  
+  async reviewAction(){
+    let adminInfo = await this.session("adminInfo");
+    if(!adminInfo || !adminInfo.admin_id){
+        this.assign({
+            title:"广告审核",
+        });
+        return this.display();
+    } 
+    
+    this.assign({
+        title:'您尚未登录!'
+    });
+    return this.redirect("/index/index");
   }
   
   

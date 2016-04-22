@@ -242,6 +242,15 @@ export default class extends Base {
     //return this.success(data);
   }
     
+    async adminlogoffAction(){
+            await this.session();
+            this.assign({
+                title:"管理员登出成功"
+            })
+            return this.display("index/index");
+
+      }
+    
     async adminloginAction(){
         let p = this.post();
         

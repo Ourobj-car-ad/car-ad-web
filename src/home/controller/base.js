@@ -16,13 +16,17 @@ export default class extends think.controller.base {
        ac === 'login2'||
        ac === 'sign2' ||
        ac === 'adminlogin'||
+       ac === 'adminlogoff'||
        ac === 'show' ||
        ac === 'logoff'||
        ac === 'temp' ||
-       ac === 'adver')
+       ac === 'adver' ||
+       ac === 'review' )
       return;
     
     let userToken = this.http.header("token");
+    
+    //return this.success(userToken);
     //return this.success('tokenService')
     let tokenService = think.service("token");
 
