@@ -16,86 +16,29 @@
 							<thead>
 								<tr>
 									<th>#</th>
-									<th>广告描述</th>
+									<th>ID</th>
+									<th>广告内容</th>
 									<th>开始时间</th>
 									<th>结束时间</th>
 									<th>价格</th>
-									<th>审核状态</th>
+									<th>播放次数</th>
 								</tr>
 							</thead>
 							<tbody>
+								<% all.forEach(function(item,index){
+									
+								%>
 								<tr class="active">
 									<th scope="row"><input name="isCheck" type="checkbox" />1</th>
-									<td>Column content</td>
-									<td>2016.3.2</td>
-									<td>2016.8.3</td>
-									<td>5000</td>
-									<td>未审核</td>
+									<td><%= item.id  %></td>
+									<td><%= item.content  %></td>
+									<td><%= think.datetime(item.start_time)  %></td>
+									<td><%= think.datetime(item.end_time) %></td>
+									<td><%= item.price %></td>
+									<td><%= item.play_times %></td>
 								</tr>
-								<tr>
-									<th scope="row"><input name="isCheck" type="checkbox" />2</th>
-									<td>Column content</td>
-									<td>2016.5.3</td>
-									<td>2018.5.3</td>
-									<td>2000</td>
-									<td>未审核</td>
-								</tr>
-								<tr class="success">
-									<th scope="row"><input name="isCheck" type="checkbox" />3</th>
-									<td>Column content</td>
-									<td>2016.3.2</td>
-									<td>2016.8.3</td>
-									<td>5000</td>
-									<td>未审核</td>
-								</tr>
-								<tr>
-									<th scope="row"><input name="isCheck" type="checkbox" />4</th>
-									<td>Column content</td>
-									<td>2016.3.2</td>
-									<td>2016.8.3</td>
-									<td>5000</td>
-									<td>未审核</td>
-								</tr>
-								<tr class="info">
-									<th scope="row"><input name="isCheck" type="checkbox" />5</th>
-									<td>Column content</td>
-									<td>2016.3.2</td>
-									<td>2016.8.3</td>
-									<td>5000</td>
-									<td>未审核</td>
-								</tr>
-								<tr>
-									<th scope="row"><input name="isCheck" type="checkbox" />6</th>
-									<td>Column content</td>
-									<td>2016.3.2</td>
-									<td>2016.8.3</td>
-									<td>5000</td>
-									<td>未审核</td>
-								</tr>
-								<tr class="warning">
-									<th scope="row"><input name="isCheck" type="checkbox" />7</th>
-									<td>Column content</td>
-									<td>2016.3.2</td>
-									<td>2016.8.3</td>
-									<td>5000</td>
-									<td>未审核</td>
-								</tr>
-								<tr>
-									<th scope="row"><input name="isCheck" type="checkbox" />8</th>
-									<td>Column content</td>
-									<td>2016.3.2</td>
-									<td>2016.8.3</td>
-									<td>5000</td>
-									<td>未审核</td>
-								</tr>
-								<tr class="danger">
-									<th scope="row"><input name="isCheck" type="checkbox" />9</th>
-									<td>Column content</td>
-									<td>2016.3.2</td>
-									<td>2016.8.3</td>
-									<td>5000</td>
-									<td>未审核</td>
-								</tr>
+								<% })  %>
+								
 							</tbody>
 						</table>
 					</div>

@@ -56,6 +56,31 @@ export default class extends Base {
         this.assign({
             title:"广告审核",
         });
+        
+        let model = this.model("ad_to_audit");
+        let data = await model.getAll();
+        this.assign({
+            all:data,
+        })
+        
+        //return this.success(data);
+        
+        
+        return this.display();
+    } 
+    
+    this.assign({
+        title:'您尚未登录!'
+    });
+    return this.redirect("/index/index");
+  }
+  
+  async moneyAction(){
+    let adminInfo = await this.session("adminInfo");
+    if(!adminInfo || !adminInfo.admin_id){
+        this.assign({
+            title:"进账管理",
+        });
         return this.display();
     } 
     

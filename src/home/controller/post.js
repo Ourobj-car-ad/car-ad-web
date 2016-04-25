@@ -4,7 +4,31 @@ import Base from './base.js';
 
 export default class extends Base {
 
-  async getaddAction(){
+  async sendadAction(){
+    let instance = this.model("ad_to_audit");
+    //return this.success(instance);
+    let p = this.post();
+    
+    let currentTime = think.datetime();
+    
+    let data = await instance.addOne(
+        currentTime,
+        currentTime,
+        p.money,
+        p.from_date,
+        p.to_date,
+        p.id,
+        p.content,
+        p.times,
+        p.regions
+    );
+
+    return this.success(data);
+    
+
+  }
+
+  async getadAction(){
     let instance = this.model("ad");
     //return this.success(instance);
     let p = this.get();
@@ -32,7 +56,6 @@ export default class extends Base {
         p.startTime,
         p.endTime,
         p.adverserId,
-        p.userId,
         p.content
     );
 

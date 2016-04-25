@@ -1,0 +1,136 @@
+<% include inc/adver_header.html %>
+	
+
+	<div id="fh5co-page">
+		<% include inc/adver_nav.html %>
+
+
+		<div class="fh5co-cover fh5co-cover-style-2 js-full-height"
+			data-stellar-background-ratio="0.5" data-next="yes"
+			style="background-image: url(/static/img/adver/full_3.jpg);">
+
+
+			<span class="scroll-btn wow fadeInUp" data-wow-duration="1s"
+				data-wow-delay="1.4s"> <a href="#"> <span class="mouse"><span></span></span>
+			</a>
+			</span>
+			<div class="fh5co-overlay"></div>
+			<div class="fh5co-cover-text">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-push-6 col-md-6 full-height js-full-height">
+							<div class="fh5co-cover-intro">
+								<h1 class="cover-text-lead wow fadeInUp" data-wow-duration="1s"
+									data-wow-delay=".5s">Create Amazing Things</h1>
+								<h2 class="cover-text-sublead wow fadeInUp"
+									data-wow-duration="1s" data-wow-delay=".8s">
+									提交您的广告
+								</h2>
+								<p class="wow fadeInUp" data-wow-duration="1s"
+									data-wow-delay="1.1s">
+									<a href="#" class="btn btn-primary btn-outline btn-lg">
+										开始提交
+									</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	<div class="application" style="background-image: url(/static/img/adver/full_1_blur.png);">
+		<form action="/post/sendad" method = "POST">
+				<input type="hidden" name="id" value="<%= advertiser.id %>"/>
+				<h2 class="cover-text-lead wow fadeInUp" data-wow-duration="1s"
+					data-wow-delay=".5s">广告的内容 ：</h2>
+				<input type = "textarea" name="content"/>
+				<h2 class="cover-text-lead wow fadeInUp" data-wow-duration="1s"
+					data-wow-delay=".5s">广告投放的主选区：</h2>
+				<input name="regions" id="regions"/>
+				<div class="select2">
+					<select id="district" onChange="changeImg()">
+						<option value="1">杨浦区</option>
+						<option value="16">黄浦区</option>
+						<option value="2">虹口区</option>
+						<option value="3">徐汇区</option>
+						<option value="4">静安区</option>
+						<option value="5">普陀区</option>
+						<option value="6">长宁区</option>
+						<option value="7">松江区</option>
+						<option value="8">嘉定区</option>
+						<option value="9">青浦区</option>
+						<option value="10">金山区</option>
+						<option value="11">宝山区</option>
+						<option value="12">闵行区</option>
+						<option value="13">奉贤区</option>
+						<option value="14">崇明县</option>
+						<option value="15">浦东新区</option>
+					</select>
+				</div>
+			<img id="position" src="http://api.map.baidu.com/staticimage?width=400&height=200&center=121.536339,31.260206&zoom=13"/>
+			<h2 class="cover-text-lead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">广告起始的日期：</h2>
+				<input type="date" name="from_date" />
+			<h2 class="cover-text-lead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">广告终止的日期：</h2>
+				<input type="date" name="to_date" /> 
+			<h2 class="cover-text-lead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s" font-color="white">发布次数：</h2>
+				<input name="times"/>
+			<h2 class="cover-text-lead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">投放金额：</h2>
+				<input name="money"/>
+			<p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.1s">
+				<input type="submit" value="提交" class="btn btn-success btn-lg"/>
+			</p>
+			</div>
+		</form>
+	</div>
+	<!-- END page-->
+
+
+				<!-- Main -->
+				<script language="javascript">
+					var i=16;
+					function changeImg()
+					{
+						var obj = document.getElementById("district");
+						var input = document.getElementById("regions");
+						var index = obj.selectedIndex;
+						var value = obj.options[index].value;
+						if(value == '16'){
+							document.getElementById("position").src="http://api.map.baidu.com/staticimage?width=400&height=200&center=121.492933,31.240448&zoom=13";
+						}else if(value == '1'){
+							document.getElementById("position").src="http://api.map.baidu.com/staticimage?width=400&height=200&center=121.536339,31.260206&zoom=13";
+						}else if(value == '2'){
+							document.getElementById("position").src="http://api.map.baidu.com/staticimage?width=400&height=200&center=121.513055,31.264404&zoom=13";
+						}else if(value == '3'){
+							document.getElementById("position").src="http://api.map.baidu.com/staticimage?width=400&height=200&center=121.440903,31.185598&zoom=13";
+						}else if(value == '4'){
+							document.getElementById("position").src="http://api.map.baidu.com/staticimage?width=400&height=200&center=121.464474,31.22785&zoom=13";
+						}else if(value == '5'){
+							document.getElementById("position").src="http://api.map.baidu.com/staticimage?width=400&height=200&center=121.423655,31.246252&zoom=12";
+						}else if(value == '6'){
+							document.getElementById("position").src="http://api.map.baidu.com/staticimage?width=400&height=200&center=121.432854,31.224762&zoom=13";
+						}else if(value == '7'){
+							document.getElementById("position").src="http://api.map.baidu.com/staticimage?width=400&height=200&center=121.234508,31.033852&zoom=13";
+						}else if(value == '8'){
+							document.getElementById("position").src="http://api.map.baidu.com/staticimage?width=400&height=200&center=121.272804,31.380476&zoom=12";
+						}else if(value == '9'){
+							document.getElementById("position").src="http://api.map.baidu.com/staticimage?width=400&height=200&center=121.124124,31.14889&zoom=12";
+						}else if(value == '10'){
+							document.getElementById("position").src="http://api.map.baidu.com/staticimage?width=400&height=200&center=121.33,30.75&zoom=12";
+						}else if(value == '11'){
+							document.getElementById("position").src="http://api.map.baidu.com/staticimage?width=400&height=200&center=121.447227,31.405175&zoom=12";
+						}else if(value == '12'){
+							document.getElementById("position").src="http://api.map.baidu.com/staticimage?width=400&height=200&center=121.402383,31.116248&zoom=12";
+						}else if(value == '13'){
+							document.getElementById("position").src="http://api.map.baidu.com/staticimage?width=400&height=200&center=121.47,30.92&zoom=12";
+						}else if(value == '14'){
+							document.getElementById("position").src="http://api.map.baidu.com/staticimage?width=400&height=200&center=121.4,31.62&zoom=12";
+						}else if(value == '15'){
+							document.getElementById("position").src="http://api.map.baidu.com/staticimage?width=400&height=200&center=121.576583,31.21661&zoom=12";
+						}
+						input.value = input.value + " "+  obj.options[index].text
+					}
+				</script>
+
+
+<% include inc/adver_footer.html %>

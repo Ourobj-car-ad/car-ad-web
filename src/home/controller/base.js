@@ -10,6 +10,7 @@ export default class extends think.controller.base {
     //return this.fail(this.http)
     var ac = this.http.action;
     //return this.json(this.http.header());
+    //return true;
     
     var permit = [
       "login","sign",
@@ -27,7 +28,7 @@ export default class extends think.controller.base {
     //let userToken = this.http.header("token");
     let userToken = await this.session("token");
 
-    //return this.success('tokenService')
+
     let tokenService = think.service("token");
 
     
@@ -40,19 +41,25 @@ export default class extends think.controller.base {
     if (verifyTokenResult === "fail") {
       this.fail("TOKEN_INVALID")
     }
+    
+        
 
     user = verifyTokenResult.userInfo;
 
     let newToken = await tokenServiceInstance.createToken({
       userInfo: verifyTokenResult.userInfo
     });
-    this.http.header("token", newToken);
+
+    await this.session("token",newToken);
+    
+    
+        //return this.success(await this.session("token"))
     
     
   }
   
   __call() {
-    this.fail("NEED_LOGIN");
+    this.fail("NEED_LOGIN_FIRST");
   }
   
   userInfo() {
