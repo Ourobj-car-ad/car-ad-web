@@ -57,11 +57,13 @@ export default class extends Base {
             title:"广告审核",
         });
         
+        let page = this.get("page") || 1;
+        
         let model = this.model("ad_to_audit");
-        let data = await model.getAll();
+        let data = await model.getByPage(page);
         this.assign({
             all:data,
-        })
+        });
         
         //return this.success(data);
         

@@ -23,10 +23,65 @@ export default class extends Base {
         p.regions
     );
 
-    return this.success(data);
+    let advertiserInfo = await this.session("advertiserInfo");
+
+    //return this.success(data);
+    let model = this.model("ad");
+    let threeAds = await model.getLast3();
     
+    this.assign({
+        title:"投放成功 | 待审核",
+        advertiser:advertiserInfo,
+        threeAds:threeAds,
+    })
+    
+    return this.display("adver/index");
 
   }
+  
+  async reviewAction(){
+    let instance = this.model("ad_to_audit");
+    //return this.success(instance);
+    let params = this.post();
+    let p = params["ids[]"];
+    p = p.split(",");
+
+    let arr = [];
+    for(let i=0;i<p.length;i++){
+        let item = p[i];
+        let index = i;
+        let data = await instance.getById(item);
+        arr.push(data);
+        await instance.where({id: item }).delete();
+    }
+    
+    //return this.success(arr);
+    
+    let ad = this.model("ad");
+    
+    for (let i=0;i<arr.length;i++){
+        let data = arr[i];
+        
+        let result = await ad.addOne(
+          think.datetime(data.create_time),
+          think.datetime(data.update_time),
+          data.price,
+          think.datetime(data.start_time),
+          think.datetime(data.end_time),
+          data.advertiser_id,
+          data.content,
+          data.play_times,
+          data.regions);
+    }
+    //let currentTime = think.datetime();
+    
+    //let data = await instance.get(p.id);
+
+    return this.success("Ok");
+    
+
+  } 
+  
 
   async getadAction(){
     let instance = this.model("ad");
