@@ -38,8 +38,160 @@
 				</div>
 			</div>
 		</div>
+		
+	<div class="fh5co-content-style-6">
+			<div class="container">
+			<form action = "/post/sendad" method = "post">
+				<input type="hidden" name="id" value="<%= advertiser.id %>"/>
+				<div class="row p-b text-center">
+					<div class="col-md-6 col-md-offset-3">
+						<h2 class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">填写广告内容</h2>
+						<p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".8s">
+							更多帮助,请查看广告填写说明
+						</p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3 col-sm-6 col-xs-6 col-xxs-12 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+						<a href="#" class="link-block" >
+							<figure>
+								<img src="/static/img/adver/img_same_dimension_1.jpg" alt="Image" class="img-responsive img-rounded">
+							</figure>
+							<h3>广告内容</h3>
 
-	<div class="application" styele="background-image: url(/static/img/adver/full_1_blur.png);">
+						</a>
+						<p>
+							<a href="#" class="link-block"></a>
+							<textarea class="input btn-primary input-lg" style="height:100px" onkeyup="setContent()" type ="textarea" id="tempContent">
+							</textarea>
+							<input type ="hidden" id="mainContent" name="content"/>
+							<!--a href="#" class="btn btn-primary btn-sm">Learn More</a-->
+						</p>
+					</div>
+								
+					<div class="col-md-3 col-sm-6 col-xs-6 col-xxs-12 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+						<a class="link-block">
+							<!--figure>
+								<img src="/static/img/adver/img_same_dimension_1.jpg" alt="Image" class="img-responsive img-rounded">
+							</figure-->
+							<figure>
+							<img id="position" src="http://api.map.baidu.com/staticimage?width=400&height=200&center=121.536339,31.260206&zoom=13"/>
+							<div class="select2">
+								<select id="district" onChange="changeImg()">
+									<option value="1">杨浦区</option>
+									<option value="16">黄浦区</option>
+									<option value="2">虹口区</option>
+									<option value="3">徐汇区</option>
+									<option value="4">静安区</option>
+									<option value="5">普陀区</option>
+									<option value="6">长宁区</option>
+									<option value="7">松江区</option>
+									<option value="8">嘉定区</option>
+									<option value="9">青浦区</option>
+									<option value="10">金山区</option>
+									<option value="11">宝山区</option>
+									<option value="12">闵行区</option>
+									<option value="13">奉贤区</option>
+									<option value="14">崇明县</option>
+									<option value="15">浦东新区</option>
+								</select>
+							</div>
+							</figure>
+							
+							<h3>主选投放区</h3>
+							<p>Regions</p>
+						</a>
+						<p>
+							<a href="#" class="link-block"></a>
+							<input class="btn btn-link btn-sm" name="regions" id="regions"/>
+						</p>
+					</div>				
+					
+					
+					
+					<div class="col-md-3 col-sm-6 col-xs-6 col-xxs-12 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+						<a href="#" class="link-block">
+							<figure><img src="/static/img/adver/img_same_dimension_2.jpg" alt="Image" class="img-responsive img-rounded"></figure>
+							<h3>播放次数</h3>
+							<p>times</p>
+						</a>
+						<p>
+							<a href="#" class="link-block"></a>
+							<input class="input btn-primary btn-sm" name="times"/>
+						</p>
+					</div>
+					
+					<div class="col-md-3 col-sm-6 col-xs-6 col-xxs-12 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+						<a href="#" class="link-block">
+							<figure><img src="/static/img/adver/img_same_dimension_3.jpg" alt="Image" class="img-responsive img-rounded"></figure>
+							<h3>说明</h3>
+							<p>Description</p>
+						</a>
+						<p>
+							<a href="#" class="link-block"></a>
+							<a href="#" class="btn btn-warning btn-sm">查看说明</a>
+						</p>
+					</div>
+					
+					<div class="clearfix visible-sm-block"></div>
+				</div>
+				<div class="row">
+					<div class="col-md-3 col-sm-6 col-xs-6 col-xxs-12 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+						<a href="#" class="link-block">
+							<figure><img src="/static/img/adver/img_same_dimension_4.jpg" alt="Image" class="img-responsive img-rounded"></figure>
+							<h3>投放起始时间</h3>
+							<p>start_time</p>
+						</a>
+						<p>
+							<a href="#" class="link-block"></a>
+							<input type="date" name="from_date" />
+						</p>
+					</div>
+					
+					<div class="clearfix visible-sm-block"></div>
+					
+					<div class="col-md-3 col-sm-6 col-xs-6 col-xxs-12 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+						<a href="#" class="link-block">
+							<figure><img src="/static/img/adver/img_same_dimension_5.jpg" alt="Image" class="img-responsive img-rounded"></figure>
+							<h3>投放结束时间</h3>
+							<p>end_time</p>
+						</a>
+						<p>
+							<a href="#" class="link-block"></a>
+							<input type="date" name="to_date" /> 
+						</p>
+					</div>
+					
+					<div class="col-md-3 col-sm-6 col-xs-6 col-xxs-12 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+						<a href="#" class="link-block">
+							<figure><img src="/static/img/adver/img_same_dimension_6.jpg" alt="Image" class="img-responsive img-rounded"></figure>
+							<h3>广告总价格</h3>
+							<p>price</p>
+						</a>
+						<p>
+							<a href="#" class="link-block"></a>
+							<input class="input btn-primary btn-sm" name="money"/>
+						</p>
+					</div>
+					
+					<div class="col-md-3 col-sm-6 col-xs-6 col-xxs-12 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+						<a href="#" class="link-block">
+							<figure><img src="/static/img/adver/img_same_dimension_7.jpg" alt="Image" class="img-responsive img-rounded"></figure>
+							<h3>提交</h3>
+							<p>price</p>
+						</a>
+						<input type="submit" value="提交" class="btn btn-success btn-sm"/>
+						<!--p>
+							<a href="#" class="link-block"></a><a href="#" class="btn btn-primary btn-sm">
+							Learn More
+						</a></p-->
+					</div>
+				</div>
+		</form>
+		</div>
+	</div>	
+
+	<!--div class="application" styele="background-image: url(/static/img/adver/full_1_blur.png);">
 		<form action="/post/sendad" method = "POST">
 				<input type="hidden" name="id" value="<%= advertiser.id %>"/>
 				<h2 class="cover-text-lead wow fadeInUp" data-wow-duration="1s"
@@ -82,13 +234,20 @@
 			</p>
 			</div>
 		</form>
-	</div>
+	</div-->
 	<!-- END page-->
 
 
 				<!-- Main -->
 				<script language="javascript">
 					var i=16;
+					$("#tempContent").val("");
+					function setContent(){
+						var val = $("#tempContent").val();
+						$("#mainContent").val(val);
+						//console.log($("#mainContent").val());
+					}
+					
 					function changeImg()
 					{
 						var obj = document.getElementById("district");
