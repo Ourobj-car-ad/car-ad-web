@@ -9,7 +9,7 @@ export default class extends think.controller.base {
   async __before(action){
     //return this.fail(this.http)
     var ac = this.http.action;
-    //return this.json(this.http.header());
+    //return this.json(ac);
     //return true;
     
     var permit = [
@@ -18,6 +18,7 @@ export default class extends think.controller.base {
       "index",
       "adminlogin","adminlogoff",
       "show",
+      "getad",
       //"review"
     ]
     

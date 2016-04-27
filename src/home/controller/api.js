@@ -4,7 +4,7 @@ import Base from './base.js';
 
 export default class extends Base {
 
-  async getaddAction(){
+  async getadAction(){
     let instance = this.model("ad");
     //return this.success(instance);
     let p = this.get();
