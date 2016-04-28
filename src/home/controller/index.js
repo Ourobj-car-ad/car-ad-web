@@ -11,7 +11,8 @@ export default class extends Base {
 
     this.assign({
         title:"老司机网 | 快速承接广告，发布广告"
-    })
+    });
+    
     return this.display();
     
 

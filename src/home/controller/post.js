@@ -187,6 +187,9 @@ export default class extends Base {
         this.assign({
             title:"登陆成功"
         });
+        let model = this.model("user_login_record");
+        
+        
         return this.redirect("/adver/index");
     }else{
         await this.session();
@@ -366,7 +369,8 @@ export default class extends Base {
             this.assign({
                 title:"老司机网 | 后台管理"
             })
-            return this.display("admin/index");
+            //return this.success("wow")
+            return this.redirect("/admin/index");
         }
       }
   

@@ -21,6 +21,15 @@ export default class extends Base {
         title:"老司机网 | 后台管理",
         adminInfo:adminInfo,
     })
+    
+    let model = await this.model("ad_to_audit");
+    let data = await model.where({}).count();
+    
+    
+    this.assign({
+        numberOfAd : data
+    })
+    
     return this.display();
   }
   
