@@ -187,8 +187,12 @@ export default class extends Base {
         this.assign({
             title:"登陆成功"
         });
-        let model = this.model("user_login_record");
-        
+
+        let model = this.model("advertiser_login_record");
+        await model.addOne({
+            time:think.datetime(),
+            advertiser_id:data.id,
+        });
         
         return this.redirect("/adver/index");
     }else{
@@ -231,7 +235,13 @@ export default class extends Base {
         await this.session("token",token);
         this.assign({
             title:"登陆成功"
-        })
+        });
+        let model = this.model("user_login_record");
+        await model.addOne({
+            time:think.datetime(),
+            user_id:data.id,
+        });
+        
     }else{
         await this.session();
         this.assign({
