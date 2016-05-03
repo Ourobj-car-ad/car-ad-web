@@ -18,9 +18,12 @@ export default class extends think.model.base {
         let model = this.model("advertiser_login_record");
         
         
-        let data = model.where({
-
-        }).count();
+        let sql = "SELECT * FROM car_advertiser_login_record where to_days(time) = to_days(now());"
+        sql = model.parseSql(sql);
+        let data = await model.query(sql);
+        //let data = await model.execute(sql);
+        
+        
         return data;
     }
 }

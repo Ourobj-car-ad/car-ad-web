@@ -58,13 +58,14 @@ export default class extends Base {
     //return this.success(arr);
     
     let ad = this.model("ad");
+    let incomeModel = this.model("income_and_expense");
     
     for (let i=0;i<arr.length;i++){
         let data = arr[i];
         
         let result = await ad.addOne(
           think.datetime(data.create_time),
-          think.datetime(data.update_time),
+          think.datetime(),
           data.price,
           think.datetime(data.start_time),
           think.datetime(data.end_time),
@@ -72,7 +73,17 @@ export default class extends Base {
           data.content,
           data.play_times,
           data.regions);
+          
+        let incomeData = await incomeModel.addOne({
+            time:think.datetime(),
+            if_income:1,
+            if_expense:0,
+            amount:data.price,
+        })
     }
+    
+
+
     //let currentTime = think.datetime();
     
     //let data = await instance.get(p.id);

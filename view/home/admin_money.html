@@ -10,116 +10,101 @@
 				<!-- //header-ends -->
 
 				<div class="graph">
-					<h3 class="sub-tittle"><a href="index.html">后台主页</a>/待审核广告 </h3>
+					<h3 class="sub-tittle"><a href="index.html">后台主页</a>/进账管理 </h3>
 					<div class="tables">
 						<table class="table">
 							<thead>
 								<tr>
 									<th>#</th>
-									<th>广告描述</th>
-									<th>开始时间</th>
-									<th>结束时间</th>
-									<th>价格</th>
-									<th>审核状态</th>
+									<th>ID</th>
+									<th>时间</th>
+									<th>收入</th>
+									<th>支出</th>
 								</tr>
 							</thead>
 							<tbody>
-								<tr class="active">
-									<th scope="row"><input name="isCheck" type="checkbox" />1</th>
-									<td>Column content</td>
-									<td>2016.3.2</td>
-									<td>2016.8.3</td>
-									<td>5000</td>
-									<td>未审核</td>
+								<% all.data.forEach(function(item,index){
+									
+								%>
+								<tr class="active www">
+									<th scope="row"><input name="isCheck" type="checkbox" /></th>
+									<td><%= item.id  %></td>
+									<td><%= think.datetime(item.time)  %></td>
+									<td><%= (item.if_income == 1)? item.amount :"" %></td>
+									<td><%= (item.if_expense == 1)? item.amount :"" %></td>
 								</tr>
-								<tr>
-									<th scope="row"><input name="isCheck" type="checkbox" />2</th>
-									<td>Column content</td>
-									<td>2016.5.3</td>
-									<td>2018.5.3</td>
-									<td>2000</td>
-									<td>未审核</td>
-								</tr>
-								<tr class="success">
-									<th scope="row"><input name="isCheck" type="checkbox" />3</th>
-									<td>Column content</td>
-									<td>2016.3.2</td>
-									<td>2016.8.3</td>
-									<td>5000</td>
-									<td>未审核</td>
-								</tr>
-								<tr>
-									<th scope="row"><input name="isCheck" type="checkbox" />4</th>
-									<td>Column content</td>
-									<td>2016.3.2</td>
-									<td>2016.8.3</td>
-									<td>5000</td>
-									<td>未审核</td>
-								</tr>
-								<tr class="info">
-									<th scope="row"><input name="isCheck" type="checkbox" />5</th>
-									<td>Column content</td>
-									<td>2016.3.2</td>
-									<td>2016.8.3</td>
-									<td>5000</td>
-									<td>未审核</td>
-								</tr>
-								<tr>
-									<th scope="row"><input name="isCheck" type="checkbox" />6</th>
-									<td>Column content</td>
-									<td>2016.3.2</td>
-									<td>2016.8.3</td>
-									<td>5000</td>
-									<td>未审核</td>
-								</tr>
-								<tr class="warning">
-									<th scope="row"><input name="isCheck" type="checkbox" />7</th>
-									<td>Column content</td>
-									<td>2016.3.2</td>
-									<td>2016.8.3</td>
-									<td>5000</td>
-									<td>未审核</td>
-								</tr>
-								<tr>
-									<th scope="row"><input name="isCheck" type="checkbox" />8</th>
-									<td>Column content</td>
-									<td>2016.3.2</td>
-									<td>2016.8.3</td>
-									<td>5000</td>
-									<td>未审核</td>
-								</tr>
-								<tr class="danger">
-									<th scope="row"><input name="isCheck" type="checkbox" />9</th>
-									<td>Column content</td>
-									<td>2016.3.2</td>
-									<td>2016.8.3</td>
-									<td>5000</td>
-									<td>未审核</td>
-								</tr>
+								<% })  %>
+								
 							</tbody>
 						</table>
 					</div>
+					
+
+					
 
 				</div>
 				<div class="pagination">
-					<ul style= "margin-left:50px";>
-						<li class="disablepage">previous</li>
-						<li class="currentpage">1</li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#">4</a></li>
-						<li><a href="#">5</a></li>
-						<li><a href="#">6</a></li>
-						<li><a href="#">7</a></li>
-						<li><a href="#">8</a></li>
-						<li><a href="#">9</a>...</li>
-						<li><a href="#">15</a></li>
-						<li><a href="#">16</a></li>
-						<li class="nextpage"><a href="#">next</a></li>
+					<ul style= "margin-left:25px";>
+						<% if(all.currentPage>1){ %>
+						<li class="">
+							<a href="/admin/review?page=<%= all.currentPage-1 %>">上一页</a>
+						</li>
+						<% }%>
+						<li>
+							<a href="/admin/review?page=<%= '1' %>">首页</a>
+						</li>
+						<%
+							var i = all.currentPage;
+							var min = i-5;
+							var max = i+5;
+							min = min>=1?min:1;
+							max = max<=all.totalPages?max:all.totalPages;
+							var i = min;
+							
+							while(i<=max) {
+							%>
+							<li class="<%= (all.currentPage == i)?'uk-currentpage':'' %>" >
+								<a href="/admin/review?page=<%= i %>"><%= i  %></a>
+							</li>
+							<% 
+								i++; 
+								} 
+							%>
+						<li>
+							<a href="/admin/review?page=<%= all.totalPages %>">末页</a>
+						</li>
+						<% if(all.currentPage<all.totalPages){ %>
+						<li class="">
+							<a href="/admin/review?page=<%= all.currentPage+1 %>">下一页</a>
+						</li>
+						<% }%>
 					</ul>
 				</div>
 
-				<a class="btn blue" style="float:right;margin-right:80px;margin-top:40px;">审核通过</a>
+				<!--button id="submit" class="btn blue" 
+					style="float:right;margin-right:80px;margin-top:40px;">审核通过</button>
+				
+					<script type="text/javascript">
+					$("#submit").click(function(e){
+						var idArr = [];
+						$(".www").each(function(index,item){
+							var dom = $(item);
+							var check = dom.find("input[name='isCheck']");
+							if(check[0].checked){
+								var tr = dom.find("td");
+								idArr.push(tr[0].innerHTML)
+							}
+						});
+
+					$.post("/post/review",{"ids":idArr},function(data){
+							//console.log(data)
+							location.reload() 
+						});
+					});
+					
+					
+					</script-->	
+				
 				<!--/sidebar-menu-->
 	<% include inc/admin_sidebar.html %>
 					

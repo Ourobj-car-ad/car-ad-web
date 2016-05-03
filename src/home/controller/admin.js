@@ -28,12 +28,20 @@ export default class extends Base {
     model = this.model("advertiser_login_record");
     let numberOfAdver = await model.getToday();
     
+    model = this.model("income_and_expense");
+    let income = await model.getToday();
+    let incomeMoney = 0;
+    income.forEach(function(item,index){
+        incomeMoney += new Number(item.amount);
+    })
+    
+    //return this.success(incomeMoney);
     
     this.assign({
         numberOfAd : data,
-        numberOfAdver:numberOfAdver
+        numberOfAdver:numberOfAdver.length,
+        numberOfIncome:incomeMoney,
     })
-    
     return this.display();
   }
   
@@ -96,6 +104,14 @@ export default class extends Base {
         this.assign({
             title:"进账管理",
         });
+        let page = this.get("page") || 1;
+        
+        let model = this.model("income_and_expense");
+        let data = await model.getByPage(page);
+        this.assign({
+            all:data,
+        });
+        //return this.success(data);
         return this.display();
     } 
     
