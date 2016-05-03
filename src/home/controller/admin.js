@@ -22,12 +22,16 @@ export default class extends Base {
         adminInfo:adminInfo,
     })
     
-    let model = await this.model("ad_to_audit");
+    let model = this.model("ad_to_audit");
     let data = await model.where({}).count();
+    
+    model = this.model("advertiser_login_record");
+    let numberOfAdver = await model.getToday();
     
     
     this.assign({
-        numberOfAd : data
+        numberOfAd : data,
+        numberOfAdver:numberOfAdver
     })
     
     return this.display();

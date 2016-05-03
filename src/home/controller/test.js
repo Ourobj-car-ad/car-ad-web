@@ -8,19 +8,10 @@ export default class extends Base {
    * @return {Promise} []
    */
   async indexAction(){
-    let model = this.model("ad");
+    let model = this.model("advertiser_login_record");
     
-    let currentTime = think.datetime();
     
-    let data = await model.addOne(
-        currentTime,
-        currentTime,
-        0,
-        currentTime,
-        currentTime,
-        1,
-        "So Easy!"
-    );
+    let data = await model.getToday()
     
     return this.success(data);
 

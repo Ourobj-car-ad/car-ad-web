@@ -9,7 +9,7 @@ export default class extends think.model.base {
         
         let data = model.add({
             time: obj.time,
-            advertiser_id:obj.user_id,
+            advertiser_id:obj.advertiser_id,
         });
         return data;
     }
@@ -19,7 +19,7 @@ export default class extends think.model.base {
         
         
         let data = model.where({
-            
+
         }).count();
         return data;
     }
