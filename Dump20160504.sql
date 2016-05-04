@@ -34,9 +34,11 @@ CREATE TABLE `car_ad` (
   `play_times` int(50) NOT NULL DEFAULT '0',
   `remain_times` int(255) NOT NULL,
   `regions` varchar(100) DEFAULT NULL,
+  `level` varchar(5) NOT NULL DEFAULT 'C',
+  `title` varchar(45) NOT NULL DEFAULT 'default',
   PRIMARY KEY (`id`),
   KEY `create_time` (`create_time`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -45,7 +47,7 @@ CREATE TABLE `car_ad` (
 
 LOCK TABLES `car_ad` WRITE;
 /*!40000 ALTER TABLE `car_ad` DISABLE KEYS */;
-INSERT INTO `car_ad` VALUES (1,'2016-04-19 17:38:02','2016-04-19 17:38:02','0','2016-04-19 17:38:02','2016-04-19 17:38:02',1,'肯德基吮指原味鸡，就在曹安公路4800号！',0,0,NULL),(2,'2016-04-19 17:38:18','2016-04-19 17:38:18','0','2016-04-19 17:38:18','2016-04-19 17:38:18',1,'学厨师，就到新东方烹饪学校！',0,0,NULL),(3,'2016-04-19 17:38:27','2016-04-19 17:38:27','0','2016-04-19 17:38:27','2016-04-19 17:38:27',1,'水可载舟,亦可赛艇.',0,0,NULL),(4,'2016-04-19 18:04:51','2016-04-19 18:04:51','0','2016-04-19 18:04:51','2016-04-19 18:04:51',1,'So Easy!',0,0,NULL),(5,'2016-04-25 10:39:54','2016-04-25 10:39:54','5000','2016-04-14 00:00:00','2016-04-19 00:00:00',8,'test',500,500,' 青浦区 杨浦区'),(6,'2016-04-25 10:36:13','2016-04-25 10:36:13','10000','2016-04-04 00:00:00','2016-04-12 00:00:00',8,'aa',500,500,' 普陀区 嘉定区'),(7,'2016-04-25 09:22:41','2016-04-25 09:22:41','10000','2016-04-12 00:00:00','2016-04-21 00:00:00',8,'ww',500,500,' 普陀区'),(8,'2016-04-25 10:39:34','2016-04-25 10:39:34','5000','2016-04-14 00:00:00','2016-04-19 00:00:00',8,'test',500,500,' 青浦区 杨浦区'),(9,'2016-04-25 12:00:48','2016-04-25 12:00:48','5000','2016-04-13 00:00:00','2016-04-15 00:00:00',8,'123456',1000,1000,' 长宁区 青浦区'),(10,'2016-04-25 12:08:54','2016-04-25 12:08:54','5000','2016-04-12 00:00:00','2016-04-14 00:00:00',8,'海鲜!',500,500,' 嘉定区');
+INSERT INTO `car_ad` VALUES (1,'2016-04-19 17:38:02','2016-04-19 17:38:02','0','2016-04-19 17:38:02','2016-04-19 17:38:02',1,'肯德基吮指原味鸡，就在曹安公路4800号！',0,0,NULL,'a','肯德基'),(2,'2016-04-19 17:38:18','2016-04-19 17:38:18','0','2016-04-19 17:38:18','2016-04-19 17:38:18',1,'学厨师，就到新东方烹饪学校！',0,0,NULL,'a','新东方'),(3,'2016-04-19 17:38:27','2016-04-19 17:38:27','0','2016-04-19 17:38:27','2016-04-19 17:38:27',1,'水可载舟,亦可赛艇.',0,0,NULL,'a','赛艇'),(4,'2016-04-19 18:04:51','2016-04-19 18:04:51','0','2016-04-19 18:04:51','2016-04-19 18:04:51',1,'So Easy!',0,0,NULL,'a','点读机'),(5,'2016-04-25 10:39:54','2016-04-25 10:39:54','5000','2016-04-14 00:00:00','2016-04-19 00:00:00',8,'只要998！',500,500,' 青浦区 杨浦区','a','金牌手机'),(6,'2016-04-25 10:36:13','2016-04-25 10:36:13','10000','2016-04-04 00:00:00','2016-04-12 00:00:00',8,'aa',500,500,' 普陀区 嘉定区','a','aa'),(7,'2016-04-25 09:22:41','2016-04-25 09:22:41','10000','2016-04-12 00:00:00','2016-04-21 00:00:00',8,'ww',500,500,' 普陀区','a','ww'),(8,'2016-04-25 10:39:34','2016-04-25 10:39:34','5000','2016-04-14 00:00:00','2016-04-19 00:00:00',8,'test',500,500,' 青浦区 杨浦区','b','test'),(9,'2016-04-25 12:00:48','2016-04-25 12:00:48','5000','2016-04-13 00:00:00','2016-04-15 00:00:00',8,'123456',1000,1000,' 长宁区 青浦区','b','123456'),(10,'2016-04-25 12:08:54','2016-04-25 12:08:54','5000','2016-04-12 00:00:00','2016-04-14 00:00:00',8,'海鲜!',500,500,' 嘉定区','b','海鲜'),(11,'2016-04-25 15:22:07','2016-04-25 15:22:07','10000','2016-04-14 00:00:00','2016-04-21 00:00:00',8,'我感觉很难受',100,100,' 普陀区','b','中药'),(12,'2016-04-25 15:38:19','2016-04-25 15:38:19','5000','2016-04-20 00:00:00','2016-04-22 00:00:00',8,'士力架!',500,500,' 虹口区 普陀区','b','士力架'),(13,'2016-04-25 15:46:50','2016-04-25 15:46:50','10000','2016-04-16 00:00:00','2016-04-28 00:00:00',8,'焦糖!巧克力!',1000,1000,' 松江区 宝山区','a','巧克力'),(14,'2016-04-27 15:53:10','2016-04-27 15:53:10','5000','2016-04-21 00:00:00','2016-04-21 00:00:00',8,'ewresr',500,500,' 徐汇区 青浦区','a','ewresr'),(15,'2016-04-27 16:16:16','2016-04-27 16:16:16','5000','2016-04-21 00:00:00','2016-04-29 00:00:00',8,'shilijia',500,500,' 静安区 金山区','a','shilijia'),(16,'2016-04-28 10:19:56','2016-04-28 10:19:56','100','2016-04-21 00:00:00','2016-04-05 00:00:00',8,'ww',1000,1000,' 徐汇区','a','ww'),(17,'2016-05-03 11:01:12','2016-05-03 11:01:31','5000','2016-05-10 00:00:00','2016-05-12 00:00:00',8,'ww',500,500,' 虹口区','a','ww'),(18,'2016-05-03 11:24:11','2016-05-03 11:24:24','60000','2016-05-11 00:00:00','2016-05-19 00:00:00',8,'qqq',600,600,' 普陀区','a','qqq'),(19,'2016-05-03 16:51:15','2016-05-03 16:51:27','5000','2016-05-03 00:00:00','2016-05-10 00:00:00',8,'111',500,500,' 虹口区','C','111'),(20,'2016-05-03 17:04:07','2016-05-03 17:04:28','10000','2016-05-04 00:00:00','2016-05-19 00:00:00',8,'test',500,500,' 静安区','C','test'),(21,'2016-05-04 08:17:37','2016-05-04 08:17:55','5000','2016-05-04 00:00:00','2016-05-19 00:00:00',8,'wwww',500,500,' 徐汇区','C','default');
 /*!40000 ALTER TABLE `car_ad` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -69,7 +71,7 @@ CREATE TABLE `car_ad_to_audit` (
   `regions` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `create_time` (`create_time`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -150,11 +152,11 @@ DROP TABLE IF EXISTS `car_advertiser_login_record`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `car_advertiser_login_record` (
-  `id` int(10) NOT NULL,
+  `id` int(10) NOT NULL AUTO_INCREMENT,
   `time` datetime NOT NULL,
   `advertiser_id` int(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -163,6 +165,7 @@ CREATE TABLE `car_advertiser_login_record` (
 
 LOCK TABLES `car_advertiser_login_record` WRITE;
 /*!40000 ALTER TABLE `car_advertiser_login_record` DISABLE KEYS */;
+INSERT INTO `car_advertiser_login_record` VALUES (1,'2016-05-03 10:30:57',8),(2,'2016-05-03 10:39:09',8),(3,'2016-05-03 11:00:16',8),(4,'2016-05-03 11:00:55',8),(5,'2016-05-03 11:23:52',8),(6,'2016-05-03 16:50:56',8),(7,'2016-05-03 16:51:49',8),(8,'2016-05-03 17:03:07',8),(9,'2016-05-03 17:03:52',8),(10,'2016-05-04 08:17:17',8),(11,'2016-05-04 08:17:17',8),(12,'2016-05-04 08:18:08',8);
 /*!40000 ALTER TABLE `car_advertiser_login_record` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -174,13 +177,13 @@ DROP TABLE IF EXISTS `car_income_and_expense`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `car_income_and_expense` (
-  `id` int(10) NOT NULL,
+  `id` int(10) NOT NULL AUTO_INCREMENT,
   `time` datetime NOT NULL,
   `if_income` tinyint(1) NOT NULL,
   `if_expense` tinyint(1) NOT NULL,
   `amount` varchar(45) CHARACTER SET latin1 NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -189,6 +192,7 @@ CREATE TABLE `car_income_and_expense` (
 
 LOCK TABLES `car_income_and_expense` WRITE;
 /*!40000 ALTER TABLE `car_income_and_expense` DISABLE KEYS */;
+INSERT INTO `car_income_and_expense` VALUES (1,'2016-05-03 11:01:31',1,0,'5000'),(2,'2016-05-03 11:24:24',1,0,'60000'),(3,'2016-05-03 16:51:27',1,0,'5000'),(4,'2016-05-03 17:04:28',1,0,'10000'),(5,'2016-05-04 08:17:55',1,0,'5000');
 /*!40000 ALTER TABLE `car_income_and_expense` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -271,7 +275,7 @@ CREATE TABLE `car_user` (
   `earnings` int(10) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -280,7 +284,7 @@ CREATE TABLE `car_user` (
 
 LOCK TABLES `car_user` WRITE;
 /*!40000 ALTER TABLE `car_user` DISABLE KEYS */;
-INSERT INTO `car_user` VALUES (6,'11','11','11','11','11','1','11','11','11',NULL,0),(7,'ww','ww','ww','ww','ww','1','ww','ww','ww',NULL,0),(8,'22','22','22','22','22','1','22','22','22',NULL,0),(9,'33','33','33','33','33','1','33','33','33',NULL,0),(10,'44','44','44','44','44','1','44','44','44',NULL,0);
+INSERT INTO `car_user` VALUES (6,'11','11','11','11','11','1','11','11','11',NULL,0),(7,'ww','ww','ww','ww','ww','1','ww','ww','ww',NULL,0),(8,'22','22','22','22','22','1','22','22','22',NULL,0),(9,'33','33','33','33','33','1','33','33','33',NULL,0),(10,'44','44','44','44','44','1','44','44','44',NULL,0),(11,'666','123456','abc@qq.com','110','666666','1','hahaha','123','1239999',NULL,0);
 /*!40000 ALTER TABLE `car_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -292,11 +296,11 @@ DROP TABLE IF EXISTS `car_user_login_record`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `car_user_login_record` (
-  `id` int(10) NOT NULL,
+  `id` int(10) NOT NULL AUTO_INCREMENT,
   `time` datetime NOT NULL,
   `user_id` int(10) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -305,7 +309,41 @@ CREATE TABLE `car_user_login_record` (
 
 LOCK TABLES `car_user_login_record` WRITE;
 /*!40000 ALTER TABLE `car_user_login_record` DISABLE KEYS */;
+INSERT INTO `car_user_login_record` VALUES (1,'2016-05-03 20:39:30',8),(2,'2016-05-03 20:39:45',8);
 /*!40000 ALTER TABLE `car_user_login_record` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `car_user_temp`
+--
+
+DROP TABLE IF EXISTS `car_user_temp`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `car_user_temp` (
+  `id` int(10) unsigned NOT NULL DEFAULT '0',
+  `name` varchar(45) CHARACTER SET utf8mb4 NOT NULL,
+  `password` varchar(45) CHARACTER SET utf8mb4 NOT NULL,
+  `email` varchar(45) CHARACTER SET utf8mb4 NOT NULL,
+  `phone` varchar(45) CHARACTER SET utf8mb4 NOT NULL,
+  `car_travel_code` varchar(45) CHARACTER SET utf8mb4 NOT NULL,
+  `identity_number` varchar(45) CHARACTER SET utf8mb4 DEFAULT '1',
+  `real_name` varchar(45) CHARACTER SET utf8mb4 NOT NULL,
+  `alipay` varchar(45) CHARACTER SET utf8mb4 NOT NULL,
+  `car_code` varchar(45) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `car_image` varchar(100) CHARACTER SET utf8mb4 DEFAULT NULL,
+  `earnings` int(10) NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `car_user_temp`
+--
+
+LOCK TABLES `car_user_temp` WRITE;
+/*!40000 ALTER TABLE `car_user_temp` DISABLE KEYS */;
+INSERT INTO `car_user_temp` VALUES (6,'11','11','11','11','11','1','11','11','11',NULL,0),(7,'ww','ww','ww','ww','ww','1','ww','ww','ww',NULL,0),(8,'22','22','22','22','22','1','22','22','22',NULL,0),(9,'33','33','33','33','33','1','33','33','33',NULL,0),(10,'44','44','44','44','44','1','44','44','44',NULL,0),(11,'666','123456','abc@qq.com','110','666666','1','hahaha','123','1239999',NULL,0);
+/*!40000 ALTER TABLE `car_user_temp` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -317,4 +355,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-04-25 13:38:22
+-- Dump completed on 2016-05-04  8:18:57
