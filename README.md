@@ -2,7 +2,23 @@
 
 2016专业方向综合项目
 
+## Build
+```
+npm install
 
+npm start
+```
+地址为[本机8360](http://127.0.0.1:8360)  
+
+线上部署请使用pm2
+```
+npm install -g pm2
+```
+修改项目内的`pm2.json`,将`cwd`值更改为真实项目目录  
+使用如下命令启动服务
+```
+pm2 startOrReload pm2.json
+```
 
 ## To Do List
 
