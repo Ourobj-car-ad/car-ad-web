@@ -252,14 +252,16 @@ export default class extends Base {
             time:think.datetime(),
             user_id:data.id,
         });
+        return this.display("index/download");
         
     }else{
         await this.session();
         this.assign({
             title:"登陆失败"
-        })
+        });
+        return this.display("index/index");
     }
-    return this.display("index/index");
+
     
   }
   
