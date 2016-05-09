@@ -30,6 +30,27 @@ export default class extends Base {
     return this.display();
   }
   
+  async infoAction(){
+    let advertiserInfo = await this.session("advertiserInfo");
+    if(!advertiserInfo || !advertiserInfo.id){
+        this.assign({
+            title:"未登陆!",
+        }) 
+        return this.display('index/index')
+    }
+    
+   
+  // return this.success(threeAds);
+
+    this.assign({
+        title:"老司机网 | 欢迎您",
+        advertiser:advertiserInfo,
+        
+    })
+    //return this.success(advertiserInfo);
+    return this.display();
+  }
+  
   async sendAction(){
     let advertiserInfo = await this.session("advertiserInfo");
     if(!advertiserInfo || !advertiserInfo.id){

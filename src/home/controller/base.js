@@ -40,7 +40,8 @@ export default class extends think.controller.base {
                           .verifyToken(userToken);
 
     if (verifyTokenResult === "fail") {
-      this.fail("TOKEN_INVALID")
+      //this.fail("TOKEN_INVALID")
+      return this.redirect("index/index");
     }
     
         
@@ -60,7 +61,8 @@ export default class extends think.controller.base {
   }
   
   __call() {
-    this.fail("NEED_LOGIN_FIRST");
+    return this.redirect("index/index");
+    //this.fail("NEED_LOGIN_FIRST");
   }
   
   userInfo() {

@@ -4,30 +4,10 @@
 		<% include inc/adver_nav.html %>
 
 
-		<div class="fh5co-cover fh5co-cover-style-2 js-full-height" data-stellar-background-ratio="0.5" data-next="yes"  style="background-image: url(images/full_1.jpg);">
-		  	<span class="scroll-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.4s">
-				<a href="#">
-					<span class="mouse"><span></span></span>
-				</a>
-			</span>
-			<div class="fh5co-overlay"></div>
-			<div class="fh5co-cover-text">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-push-6 col-md-6 full-height js-full-height">
-							<div class="fh5co-cover-intro">
-								<h1 class="cover-text-lead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">Create Amazing Things</h1>
-								<h2 class="cover-text-sublead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".8s">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics.</h2>
-								<p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.1s"><a href="#" class="btn btn-primary btn-outline btn-lg">See Our Work</a></p>
-							</div>
-						</div>
-					</div>
-				</div>	
-			</div>
-		</div>
 
 		
-	
+	<div class="fh5co-cover fh5co-cover-style-2 js-full-height" data-stellar-background-ratio="0.5" data-next="yes"
+	  style="background-image: url(/static/img/adver/full_2.jpg);">
 
 		<div class="fh5co-project-style-2">
 			
@@ -39,110 +19,54 @@
 						<p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay=".8s">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics.</p>
 					</div>
 				</div>
-				<div class="row">
+				<!--div class="row"->
 					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 fh5co-feature wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.1s">
 					<div class="fh5co-desc">
 						<h3>ID</h3>
-						<p>0001 </p>
+						<p><%= advertiser.content %></p>
 					</div>	
-				</div>
+				<--/div-->
 				<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 fh5co-feature wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.4s">
 					<div class="fh5co-desc">
-						<h3>Company Name</h3>
-						<p>Big Fellow </p>
+						<h2>Name</h2>
+						<h3><%= advertiser.name %></h3>
 					</div>
 				</div>
 				<div class="clearfix visible-sm-block visible-xs-block"></div>
 				<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 fh5co-feature wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.7s">
 					<div class="fh5co-desc">
-						<h3>Phone Number</h3>
-						<p> (+86) 021-65895662 </p>
+						<h2>Phone Number</h2>
+						<h3><%= advertiser.phone %></h3>
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 fh5co-feature wow fadeInUp" data-wow-duration="1s" data-wow-delay="2s">
 	
 					<div class="fh5co-desc">
-						<h3>Email Address</h3>
-						<p>bigfellow@gmail.com</p>
+						<h2>Email Address</h2>
+						<h3><%= advertiser.email %></h3>
 					</div>	
 				</div>
 				<div class="clearfix visible-sm-block visible-xs-block"></div>
 				<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 fh5co-feature wow fadeInUp" data-wow-duration="1s" data-wow-delay="2.3s">
 				
 					<div class="fh5co-desc">
-						<h3>Real Name</h3>
-						<p>Francis Underwood </p>
+						<h2>Money</h2>
+						<h3><%= advertiser.money %></h3>
 					</div>
 				</div>
 				<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 fh5co-feature wow fadeInUp" data-wow-duration="1s" data-wow-delay="2.6s">
 	
 					<div class="fh5co-desc">
-						<h3>Alipay Number</h3>
-						<p> FU@foxmail.com </p>
+						<h2>Alipay Number</h2>
+						<h3><%= advertiser.email %></h3>
 					</div>
 				</div>
 				<div class="clearfix visible-sm-block visible-xs-block"></div>
 				</div>
-				<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 fh5co-feature wow fadeInUp" data-wow-duration="1s" data-wow-delay="2.6s">
-			
-					<div class="fh5co-desc">
-						<h3>Car Code</h3>
-						<p> 沪 AZ7001</p>
-					</div>
-				</div>
 			</div>
 		</div>
 			
-			<div class="fh5co-projects">
-				<ul>
-					<li class="wow fadeInUp" style="background-image: url(images/full_4.jpg);" data-wow-duration="1s" data-wow-delay="1.4s" data-stellar-background-ratio="0.5">
-						<a href="#">
-							<div class="fh5co-overlay"></div>
-							<div class="container">
-								<div class="fh5co-text">
-									<div class="fh5co-text-inner">
-										<div class="row">
-											<div class="col-md-6"><h3>Project Name #1</h3></div>
-											<div class="col-md-6"><p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</a>
-					</li>
-					<li class="wow fadeInUp" style="background-image: url(images/full_2.jpg);" data-wow-duration="1s" data-wow-delay="1.7s" data-stellar-background-ratio="0.5">
-						<a href="#">
-							<div class="fh5co-overlay"></div>
-							<div class="container">
-								<div class="fh5co-text">
-									<div class="fh5co-text-inner">
-										<div class="row">
-											<div class="col-md-6"><h3>Project Name #2</h3></div>
-											<div class="col-md-6"><p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</a>
-					</li>
-					<li class="wow fadeInUp" style="background-image: url(images/full_1.jpg);" data-wow-duration="1s" data-wow-delay="2s" data-stellar-background-ratio="0.5">
-						<a href="#">
-							<div class="fh5co-overlay"></div>
-							<div class="container">
-								<div class="fh5co-text">
-									<div class="fh5co-text-inner">
-										<div class="row">
-											<div class="col-md-6"><h3>Project Name #3</h3></div>
-											<div class="col-md-6"><p>.</p></div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</a>
-					</li>
-				</ul>
-			</div>
-		</div>
+		</div>		
 	
 		<!-- END footer -->
 		
