@@ -31,6 +31,14 @@ export default class extends Base {
     
   }
   
+  async downloadAction(){
+    this.assign({
+        title:"APP下载"
+    })
+    return this.display("index/download");
+    
+  }
+  
   async login2Action(){
 
     this.assign({

@@ -252,7 +252,7 @@ export default class extends Base {
             time:think.datetime(),
             user_id:data.id,
         });
-        return this.display("index/download");
+        return this.redirect("/index/download");
         
     }else{
         await this.session();
