@@ -45,12 +45,27 @@ export default class extends Base {
         currentTime,
         currentTime,
         p.price,
+        /*
         p.startTime,
         p.endTime,
-        p.adverserId,
+        */
+        currentTime,
+        currentTime,
+        p.adId,
+        p.advertiserId,
         p.userId,
         p.regionInfo
     );
+    
+    
+    
+    let income_and_expense = this.model("income_and_expense");
+    let result = await income_and_expense.addOne({
+      time:currentTime,
+      if_income:0,
+      if_expense:1,
+      amount:p.price
+    })
 
     return this.success(data);
     

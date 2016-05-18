@@ -6,13 +6,13 @@ export default class extends think.model.base {
     async addOne(obj){
         let model = this.model("income_and_expense");
         
-        
         let data = model.add({
             time:obj.time,
             if_income:obj.if_income,
             if_expense:obj.if_expense,
             amount:obj.amount
         });
+
         return data;
     }
     

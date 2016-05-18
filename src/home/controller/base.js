@@ -19,6 +19,7 @@ export default class extends think.controller.base {
       "adminlogin","adminlogoff",
       "show",
       "getad",
+      "addorder",
       //"review"
     ]
     
