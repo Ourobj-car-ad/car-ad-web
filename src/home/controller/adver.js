@@ -86,8 +86,12 @@ export default class extends Base {
         }else{
             item.status = "审核拒绝"
         }
-        item.start_time = think.datetime(item.start_time);
+        item.create_time = think.datetime(item.create_time);
     })
+    /*
+    result.sort(function(a,b){
+        return a.create_time < b.create_time
+    })*/
     
     this.assign({
         result:result,
