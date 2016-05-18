@@ -88,6 +88,7 @@
 				</div>
 
 				<button id="submit" class="btn blue" style="float:right;margin-right:80px;margin-top:40px;">审核通过</button>
+				<button id="refuse" class="btn blue" style="float:right;margin-right:0px;margin-top:40px;">拒绝</button>
 				
 					<script type="text/javascript">
 					$("#submit").click(function(e){
@@ -102,6 +103,23 @@
 						});
 
 					$.post("/post/review",{"ids":idArr},function(data){
+							//console.log(data)
+							location.reload() 
+						});
+					});
+					
+					$("#refuse").click(function(e){
+						var idArr = [];
+						$(".www").each(function(index,item){
+							var dom = $(item);
+							var check = dom.find("input[name='isCheck']");
+							if(check[0].checked){
+								var tr = dom.find("td");
+								idArr.push(tr[0].innerHTML)
+							}
+						});
+
+					$.post("/post/refuse",{"ids":idArr},function(data){
 							//console.log(data)
 							location.reload() 
 						});

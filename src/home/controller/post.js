@@ -93,6 +93,44 @@ export default class extends Base {
 
   } 
   
+async refuseAction(){
+    let instance = this.model("ad_to_audit");
+    //return this.success(instance);
+    let params = this.post();
+    let p = params["ids[]"];
+    p = p.split(",");
+
+    let arr = [];
+    for(let i=0;i<p.length;i++){
+        let item = p[i];
+        let index = i;
+        let data = await instance.getById(item);
+        arr.push(data);
+        await instance.where({id: item }).delete();
+    }
+    
+    let ad = this.model("ad_reject");
+
+    for (let i=0;i<arr.length;i++){
+        let data = arr[i];
+        
+        let result = await ad.addOne(
+          think.datetime(data.create_time),
+          think.datetime(),
+          data.price,
+          think.datetime(data.start_time),
+          think.datetime(data.end_time),
+          data.advertiser_id,
+          data.content,
+          data.play_times,
+          data.regions);
+    }
+    
+    return this.success("Ok");
+    
+
+  } 
+  
 
   async getadAction(){
     let instance = this.model("ad");
