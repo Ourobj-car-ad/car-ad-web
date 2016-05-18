@@ -1,0 +1,80 @@
+<% include inc/adver_header.html %>
+	
+	<div id="fh5co-page">
+		<% include inc/adver_nav.html %>
+
+
+		<!--div class="fh5co-cover fh5co-cover-style-2 js-full-height" data-stellar-background-ratio="0.5" data-next="yes"  style="background-image: url(images/full_1.jpg);">
+		  	<span class="scroll-btn wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.4s">
+				<a href="#">
+					<span class="mouse"><span></span></span>
+				</a>
+			</span>
+			<div class="fh5co-overlay"></div>
+			<div class="fh5co-cover-text">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-push-6 col-md-6 full-height js-full-height">
+							<div class="fh5co-cover-intro">
+								<h1 class="cover-text-lead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">Create Amazing Things</h1>
+								<h2 class="cover-text-sublead wow fadeInUp" data-wow-duration="1s" data-wow-delay=".8s">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics.</h2>
+								<p class="wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.1s"><a href="#" class="btn btn-primary btn-outline btn-lg">See Our Work</a></p>
+							</div>
+						</div>
+					</div>
+				</div>	
+			</div>
+		</div-->
+		
+		<div class="fh5co-footer-style-3">
+			<div class="container" style="padding-top:20px">
+				<div class="row p-b">
+					<div class="col-md-3 col-sm-6 fh5co-footer-widget wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+						<div class="fh5co-logo"><span class="logo">V</span> ID</div>
+						<ul class="fh5co-links">
+							<% result.forEach(function(item,index){ %>
+								<li><%= item.id %></li>
+							<% }) %>
+						</ul>
+					</div>
+					<div class="col-md-3 col-sm-6 fh5co-footer-widget wow fadeInUp" data-wow-duration="1s" data-wow-delay=".8s">
+						<h3>状态</h3>
+						<ul class="fh5co-links">
+							<% result.forEach(function(item,index){ %>
+								<li><%= item.status %></li>
+							<% }) %>
+						</ul>
+					</div>
+					<div class="col-md-3 col-sm-6 fh5co-footer-widget wow fadeInUp" data-wow-duration="1s" data-wow-delay=".8s">
+						<h3>发布时间</h3>
+						<ul class="fh5co-links">
+							<% result.forEach(function(item,index){ %>
+								<li><%= item.start_time %></li>
+							<% }) %>
+						</ul>
+					</div>
+					<div class="clearfix visible-sm-block"></div>
+					<div class="col-md-3 col-sm-6 fh5co-footer-widget wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.4s">
+						<h3>价格</h3>
+						<ul class="fh5co-links fh5co-social">
+							<% result.forEach(function(item,index){ %>
+								<li><%= item.price %></li>
+							<% }) %>
+						</ul>
+					</div>
+					<div class="clearfix visible-sm-block"></div>
+				</div>
+				<div class="row fh5co-made">
+					<div class="col-md-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+						<p>广告投放记录</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!-- END footer -->
+		
+	</div>
+	<!-- END page-->
+
+<% include inc/adver_footer.html %>
