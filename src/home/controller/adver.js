@@ -1,6 +1,7 @@
 'use strict';
 
 import Base from './base.js';
+import moment from 'moment'
 
 export default class extends Base {
   /**
@@ -70,18 +71,22 @@ export default class extends Base {
     })
     
    let model = this.model("ad");
-   let data = await model.where({
+   let data = await model.order({
+       create_time: "DESC"
+   }).where({
        advertiser_id:advertiserInfo.id
    }).select();
    
    let refuseModel = this.model("ad_reject");
-   let refuseData = await refuseModel.where({
+   let refuseData = await refuseModel.order({
+       create_time: "DESC"
+   }).where({
        advertiser_id:advertiserInfo.id
    }).select();
    
-    let result = data.concat(refuseData);
+    let result = refuseData.concat(data);
     result.forEach(function(item,index){
-        if(index <data.length){
+        if(index >=refuseData.length){
             item.status = "审核通过";
         }else{
             item.status = "审核拒绝"
@@ -90,14 +95,16 @@ export default class extends Base {
     })
     /*
     result.sort(function(a,b){
-        return a.create_time < b.create_time
+        return moment(a.create_time) > moment(b.create_time)
     })*/
+    
+    
     
     this.assign({
         result:result,
     })
-    
-    //return this.success(result);
+        /*return this.success(moment(result[3]));
+    return this.success(moment(result[0]));*/
     
     return this.display();
   }
