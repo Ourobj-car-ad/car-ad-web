@@ -3,6 +3,34 @@
 import Base from './base.js';
 
 export default class extends Base {
+  
+  
+  async getbytypeAction(){
+    let instance = this.model("ad");
+    let p = this.get();
+    let currentTime = think.datetime();
+    let types = p.types.split(",");
+    let index = Math.floor(Math.random()*(types.length));
+    let type = types[index];
+    
+       // return this.success(index);
+    
+    let data = await instance.where({
+      regions:type,
+      remain_times:{"!=":0},
+    }).order({
+      id:"ASC"
+    }).limit(1).find();
+    
+    if (think.isEmpty(data)){
+      data = await instance.where({
+        remain_times:{"!=":0}
+      }).order("rand()").limit(1).find();
+    }
+    
+    return this.success(data);
+    
+  }
 
   async getadAction(){
     let instance = this.model("ad");

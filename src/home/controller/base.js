@@ -6,8 +6,10 @@ export default class extends think.controller.base {
   /**
    * some base method in here
    */
+  
   async __before(action){
     //return this.fail(this.http)
+    //return;
     var ac = this.http.action;
     //return this.json(ac);
     //return true;
@@ -20,13 +22,16 @@ export default class extends think.controller.base {
       "show",
       "getad",
       "addorder",
+      "getbytype",
       //"review"
     ]
     
     //return this.success(ac);
-    if (permit.indexOf(ac)!=-1)
-      return;
-    
+    let index = permit.indexOf(ac);
+    //return this.success(index);
+    if (index!=-1){
+      return true;
+    }
     //let userToken = this.http.header("token");
     let userToken = await this.session("token");
 
@@ -42,7 +47,7 @@ export default class extends think.controller.base {
 
     if (verifyTokenResult === "fail") {
       //this.fail("TOKEN_INVALID")
-      return this.redirect("index/index");
+      return this.redirect("/index/index");
     }
     
         
@@ -62,7 +67,8 @@ export default class extends think.controller.base {
   }
   
   __call() {
-    return this.redirect("index/index");
+          //this.success("index");
+    //return this.redirect("/index/index");
     //this.fail("NEED_LOGIN_FIRST");
   }
   
