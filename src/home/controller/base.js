@@ -23,6 +23,8 @@ export default class extends think.controller.base {
       "getad",
       "addorder",
       "getbytype",
+      "getbyuserid",
+      "exitwithuserid",
       //"review"
     ]
     

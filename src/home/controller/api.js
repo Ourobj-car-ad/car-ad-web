@@ -4,12 +4,35 @@ import Base from './base.js';
 
 export default class extends Base {
   
+  async getbyuseridAction(){
+    let p = this.get();
+    let id = p.id;
+    let userModel = this.model("user");
+    let data = await userModel.where({id:id}).find();
+    
+    let ad = data.current_ad;
+    
+    return this.success(ad);
+    
+  }
+  
+  async exitwithuseridAction(){
+    let p = this.get();
+    let id = p.id;
+    let userModel = this.model("user");
+    let data = await userModel.where({id:id}).update({current_ad:"no current ad"});
+
+    return this.success(data);
+    
+  }
+  
   
   async getbytypeAction(){
     let instance = this.model("ad");
     let p = this.get();
     let currentTime = think.datetime();
     let types = p.types.split(",");
+    let id = p.id;
     let index = Math.floor(Math.random()*(types.length));
     let type = types[index];
     
@@ -27,6 +50,9 @@ export default class extends Base {
         remain_times:{"!=":0}
       }).order("rand()").limit(1).find();
     }
+    
+    let userModel = this.model("user");
+    await userModel.where({id:id}).update({current_ad:data.content});
     
     return this.success(data);
     
