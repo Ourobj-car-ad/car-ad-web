@@ -19,7 +19,7 @@ export default class extends think.model.base {
   
   async addOne(create_time,update_time,price,
         start_time,end_time,advertiser_id,
-        content,play_times,regions){
+        content,play_times,regions,title){
     let model = this.model("ad");
     let data = await model.add({
         create_time:create_time,
@@ -31,7 +31,8 @@ export default class extends think.model.base {
         content:content,
         play_times:play_times,
         remain_times:play_times,
-        regions:regions
+        regions:regions,
+        title:title,
     })
     return data;
   }

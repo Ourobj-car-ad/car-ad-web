@@ -53,6 +53,19 @@
 				</div>
 				<div class="row">
 					<div class="col-md-3 col-sm-6 col-xs-6 col-xxs-12 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
+						<a class="link-block">
+							<figure><img src="/static/img/adver/img_same_dimension_3.jpg" alt="Image" class="img-responsive img-rounded"></figure>
+							<h3>广告标题</h3>
+							<p>Title</p>
+						</a>
+						<p>
+							<a class="link-block"></a>
+							<input class="input btn-primary btn-sm" name="title"/>
+						</p>
+					</div>
+					
+					
+					<div class="col-md-3 col-sm-6 col-xs-6 col-xxs-12 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
 						<a class="link-block" >
 							<figure>
 								<img src="/static/img/adver/img_same_dimension_1.jpg" alt="Image" class="img-responsive img-rounded">
@@ -66,6 +79,8 @@
 							<!--a class="btn btn-primary btn-sm">Learn More</a-->
 						</p>
 					</div>
+						
+						
 								
 					<div class="col-md-3 col-sm-6 col-xs-6 col-xxs-12 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
 						<a class="link-block">
@@ -78,25 +93,29 @@
 								alt="Image" class="img-rounded">
 							</figure>
 							
-							<h3>主选投放区</h3>
+							<h3>投放类别</h3>
 							<div class="select2"  style="padding-bottom: 30px;">
 								<select id="district" onChange="changeImg()">
-									<option value="1">杨浦区</option>
-									<option value="16">黄浦区</option>
-									<option value="2">虹口区</option>
-									<option value="3">徐汇区</option>
-									<option value="4">静安区</option>
-									<option value="5">普陀区</option>
-									<option value="6">长宁区</option>
-									<option value="7">松江区</option>
-									<option value="8">嘉定区</option>
-									<option value="9">青浦区</option>
-									<option value="10">金山区</option>
-									<option value="11">宝山区</option>
-									<option value="12">闵行区</option>
-									<option value="13">奉贤区</option>
-									<option value="14">崇明县</option>
-									<option value="15">浦东新区</option>
+									<option value="1">汽车服务</option>
+									<option value="2">汽车维修</option>
+									<option value="3">汽车销售</option>
+									<option value="4">摩托车服务</option>
+									<option value="5">餐饮服务</option>
+									<option value="6">购物服务</option>
+									<option value="7">生活服务</option>
+									<option value="8">体育休闲服务</option>
+									<option value="9">医疗保健服务</option>
+									<option value="10">住宿服务</option>
+									<option value="11">风景名胜</option>
+									<option value="12">商务住宅</option>
+									<option value="13">政府机构及社会团体</option>
+									<option value="14">科教文化服务</option>
+									<option value="15">交通设施服务</option>
+									<option value="16">金融保险服务</option>
+									<option value="17">公司企业</option>
+									<option value="18">道路附属设施</option>
+									<option value="19">地名地址信息</option>
+									<option value="20">公共设施</option>
 								</select>
 							</div>
 						</a>
@@ -105,8 +124,6 @@
 							<input class="btn btn-link btn-sm" name="regions" id="regions"/>
 						</p>
 					</div>				
-					
-					
 					
 					<div class="col-md-3 col-sm-6 col-xs-6 col-xxs-12 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
 						<a class="link-block">
@@ -119,18 +136,7 @@
 							<input class="input btn-primary btn-sm" name="times"/>
 						</p>
 					</div>
-					
-					<div class="col-md-3 col-sm-6 col-xs-6 col-xxs-12 wow fadeInLeft" data-wow-duration="1s" data-wow-delay="1s">
-						<a class="link-block">
-							<figure><img src="/static/img/adver/img_same_dimension_3.jpg" alt="Image" class="img-responsive img-rounded"></figure>
-							<h3>说明</h3>
-							<p>Description</p>
-						</a>
-						<p>
-							<a  class="link-block"></a>
-							<a class="btn btn-warning btn-sm">查看说明</a>
-						</p>
-					</div>
+				
 					
 					<div class="clearfix visible-sm-block"></div>
 				</div>
@@ -209,6 +215,7 @@
 						var input = document.getElementById("regions");
 						var index = obj.selectedIndex;
 						var value = obj.options[index].value;
+						/*
 						if(value == '16'){
 							document.getElementById("position").src="http://api.map.baidu.com/staticimage?width=260&height=175&center=121.492933,31.240448&zoom=13";
 						}else if(value == '1'){
@@ -241,8 +248,8 @@
 							document.getElementById("position").src="http://api.map.baidu.com/staticimage?width=260&height=175&center=121.4,31.62&zoom=12";
 						}else if(value == '15'){
 							document.getElementById("position").src="http://api.map.baidu.com/staticimage?width=260&height=175&center=121.576583,31.21661&zoom=12";
-						}
-						input.value = input.value + " "+  obj.options[index].text
+						}*/
+						input.value = obj.options[index].text
 					}
 				</script>
 

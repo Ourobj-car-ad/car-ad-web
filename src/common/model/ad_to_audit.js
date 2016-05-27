@@ -4,9 +4,10 @@
  */
 export default class extends think.model.base {
     
-  async addOne(create_time,update_time,price,start_time,end_time,advertiser_id,content,times,regions){
+  async addOne(create_time,update_time,price,start_time,end_time,
+      advertiser_id,content,times,regions,title){
     let model = this.model("ad_to_audit");
-    let data = await model.add({
+    let obj = {
         create_time:create_time,
         update_time:update_time,
         price:price,
@@ -15,8 +16,12 @@ export default class extends think.model.base {
         advertiser_id:advertiser_id,
         content:content,
         play_times:times,
-        regions:regions
-    })
+        regions:regions,
+        title:title,
+    };
+        //return obj
+    let data = await model.add(obj)
+
     return data;
   }
   

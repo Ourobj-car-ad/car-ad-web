@@ -6,7 +6,7 @@ export default class extends Base {
 
   async sendadAction(){
     let instance = this.model("ad_to_audit");
-    //return this.success(instance);
+    //return this.success(this.post);
     let p = this.post();
     
     let currentTime = think.datetime();
@@ -20,8 +20,11 @@ export default class extends Base {
         p.id,
         p.content,
         p.times,
-        p.regions
+        p.regions,
+        p.title
     );
+    
+    return this.success(data);
 
     let advertiserInfo = await this.session("advertiserInfo");
 
@@ -72,7 +75,8 @@ export default class extends Base {
           data.advertiser_id,
           data.content,
           data.play_times,
-          data.regions);
+          data.regions,
+          data.title);
           
         let incomeData = await incomeModel.addOne({
             time:think.datetime(),
