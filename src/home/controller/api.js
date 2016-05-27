@@ -10,9 +10,44 @@ export default class extends Base {
     let userModel = this.model("user");
     let data = await userModel.where({id:id}).find();
     
-    let ad = data.current_ad;
+    let ad_id = data.current_ad_id;
     
-    return this.success(ad);
+    data = await this.model("ad").where({
+      id:ad_id,
+    }).find();
+    //return this.success(data.content);
+
+    if(ad_id != 0 && data.remain_times !=0){
+      //给广告减1次
+      let adModel = this.model("ad");
+      //return this.success(ad_id);
+      await adModel.where({id:ad_id}).decrement("remain_times",1);
+      //return this.success(wowData);
+      //给用户+1毛
+      let userModel = this.model("user");
+      await userModel.where({id:id}).increment("earnings",0.01);
+      
+      //给Order表加一条数据
+      let orderModel = this.model("order");
+      let currentTime = think.datetime();
+
+      await orderModel.add({
+        create_time:currentTime,
+        status:1,
+        update_time:currentTime,
+        per_price:(0.01).toString(),
+        start_time:currentTime,
+        end_time:currentTime,
+        ad_id:data.id,
+        advertiser_id:data.advertiser_id,
+        user_id:id,
+        region_info:data.regions,
+        context:data.content
+      })
+        return this.success(data.content);
+    }
+    
+    return this.success("Your phone is not active!");
     
   }
   
@@ -20,7 +55,7 @@ export default class extends Base {
     let p = this.get();
     let id = p.id;
     let userModel = this.model("user");
-    let data = await userModel.where({id:id}).update({current_ad:"no current ad"});
+    let data = await userModel.where({id:id}).update({current_ad_id:0});
 
     return this.success(data);
     
@@ -52,7 +87,7 @@ export default class extends Base {
     }
     
     let userModel = this.model("user");
-    await userModel.where({id:id}).update({current_ad:data.content});
+    await userModel.where({id:id}).update({current_ad_id:data.id});
     
     return this.success(data);
     
