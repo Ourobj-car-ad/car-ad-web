@@ -29,7 +29,7 @@
 		<div class="fh5co-footer-style-3 fh5co-cover  js-full-height">
 			<div class="container" style="padding-top:20px">
 				<div class="row p-b">
-					<div class="col-md-3 col-sm-6 fh5co-footer-widget wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
+					<div class="col-md-2 col-sm-6 fh5co-footer-widget wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
 						<div class="fh5co-logo"><span class="logo">V</span> ID</div>
 						<ul class="fh5co-links">
 							<% result.forEach(function(item,index){ %>
@@ -37,7 +37,7 @@
 							<% }) %>
 						</ul>
 					</div>
-					<div class="col-md-3 col-sm-6 fh5co-footer-widget wow fadeInUp" data-wow-duration="1s" data-wow-delay=".8s">
+					<div class="col-md-2 col-sm-6 fh5co-footer-widget wow fadeInUp" data-wow-duration="1s" data-wow-delay=".8s">
 						<h3>状态</h3>
 						<ul class="fh5co-links">
 							<% result.forEach(function(item,index){ %>
@@ -45,7 +45,7 @@
 							<% }) %>
 						</ul>
 					</div>
-					<div class="col-md-3 col-sm-6 fh5co-footer-widget wow fadeInUp" data-wow-duration="1s" data-wow-delay=".8s">
+					<div class="col-md-2 col-sm-6 fh5co-footer-widget wow fadeInUp" data-wow-duration="1s" data-wow-delay=".8s">
 						<h3>发布时间</h3>
 						<ul class="fh5co-links">
 							<% result.forEach(function(item,index){ %>
@@ -53,7 +53,7 @@
 							<% }) %>
 						</ul>
 					</div>
-					<div class="col-md-3 col-sm-6 fh5co-footer-widget wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.4s">
+					<div class="col-md-2 col-sm-6 fh5co-footer-widget wow fadeInUp" data-wow-duration="1s" data-wow-delay=".8s">
 						<h3>内容</h3>
 						<ul class="fh5co-links fh5co-social">
 							<% result.forEach(function(item,index){ %>
@@ -61,8 +61,16 @@
 							<% }) %>
 						</ul>
 					</div>
+					<div class="col-md-2 col-sm-6 fh5co-footer-widget wow fadeInUp" data-wow-duration="1s" data-wow-delay=".8s">
+						<h3>剩余播放次数</h3>
+						<ul class="fh5co-links fh5co-social">
+							<% result.forEach(function(item,index){ %>
+								<li><%= item.remain_times %></li>
+							<% }) %>
+						</ul>
+					</div>
 					<div class="clearfix visible-sm-block"></div>
-					<!--div class="col-md-3 col-sm-6 fh5co-footer-widget wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.4s">
+					<div class="col-md-2 col-sm-6 fh5co-footer-widget wow fadeInUp" data-wow-duration="1s" data-wow-delay=".8s">
 						<h3>价格</h3>
 						<ul class="fh5co-links fh5co-social">
 							<% result.forEach(function(item,index){ %>
@@ -70,7 +78,7 @@
 							<% }) %>
 						</ul>
 					</div>
-					<div class="clearfix visible-sm-block"></div-->
+					<div class="clearfix visible-sm-block"></div>
 				</div>
 				<div class="row fh5co-made">
 					<div class="col-md-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">
