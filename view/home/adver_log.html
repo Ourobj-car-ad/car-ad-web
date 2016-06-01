@@ -53,8 +53,16 @@
 							<% }) %>
 						</ul>
 					</div>
-					<div class="clearfix visible-sm-block"></div>
 					<div class="col-md-3 col-sm-6 fh5co-footer-widget wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.4s">
+						<h3>内容</h3>
+						<ul class="fh5co-links fh5co-social">
+							<% result.forEach(function(item,index){ %>
+								<li><%= item.content %></li>
+							<% }) %>
+						</ul>
+					</div>
+					<div class="clearfix visible-sm-block"></div>
+					<!--div class="col-md-3 col-sm-6 fh5co-footer-widget wow fadeInUp" data-wow-duration="1s" data-wow-delay="1.4s">
 						<h3>价格</h3>
 						<ul class="fh5co-links fh5co-social">
 							<% result.forEach(function(item,index){ %>
@@ -62,7 +70,7 @@
 							<% }) %>
 						</ul>
 					</div>
-					<div class="clearfix visible-sm-block"></div>
+					<div class="clearfix visible-sm-block"></div-->
 				</div>
 				<div class="row fh5co-made">
 					<div class="col-md-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay=".5s">

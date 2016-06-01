@@ -24,7 +24,7 @@ export default class extends Base {
         p.title
     );
     
-    return this.success(data);
+    //return this.success(data);
 
     let advertiserInfo = await this.session("advertiserInfo");
 
