@@ -33,9 +33,10 @@ export default class extends Base {
     let threeAds = await model.getLast3();
     
     this.assign({
-        title:"投放成功 | 待审核",
+        title:"投放成功,请等待管理员审核",
         advertiser:advertiserInfo,
         threeAds:threeAds,
+        isAlert:true,
     })
     
     return this.display("adver/index");
@@ -251,7 +252,8 @@ async refuseAction(){
     }else{
         await this.session();
         this.assign({
-            title:"登陆失败"
+            title:"登陆失败,请检查您的邮箱和密码",
+            isAlert:true,
         })
         return this.display("index/index");
     }
@@ -299,7 +301,8 @@ async refuseAction(){
     }else{
         await this.session();
         this.assign({
-            title:"登陆失败"
+            title:"登陆失败,请检查您的邮箱和密码",
+            isAlert:true,
         });
         return this.display("index/index");
     }

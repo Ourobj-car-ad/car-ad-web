@@ -47,16 +47,17 @@
 					<ul style= "margin-left:25px";>
 						<% if(all.currentPage>1){ %>
 						<li class="">
-							<a href="/admin/review?page=<%= all.currentPage-1 %>">上一页</a>
+							<a href="/admin/money?page=<%= all.currentPage-1 %>">上一页</a>
 						</li>
 						<% }%>
 						<li>
-							<a href="/admin/review?page=<%= '1' %>">首页</a>
+							<a href="/admin/money?page=<%= '1' %>">首页</a>
 						</li>
 						<%
 							var i = all.currentPage;
 							var min = i-5;
 							var max = i+5;
+							
 							min = min>=1?min:1;
 							max = max<=all.totalPages?max:all.totalPages;
 							var i = min;
@@ -64,18 +65,18 @@
 							while(i<=max) {
 							%>
 							<li class="<%= (all.currentPage == i)?'uk-currentpage':'' %>" >
-								<a href="/admin/review?page=<%= i %>"><%= i  %></a>
+								<a href="/admin/money?page=<%= i %>"><%= i  %></a>
 							</li>
 							<% 
 								i++; 
 								} 
 							%>
 						<li>
-							<a href="/admin/review?page=<%= all.totalPages %>">末页</a>
+							<a href="/admin/money?page=<%= all.totalPages %>">末页</a>
 						</li>
 						<% if(all.currentPage<all.totalPages){ %>
 						<li class="">
-							<a href="/admin/review?page=<%= all.currentPage+1 %>">下一页</a>
+							<a href="/admin/money?page=<%= all.currentPage+1 %>">下一页</a>
 						</li>
 						<% }%>
 					</ul>

@@ -18,7 +18,10 @@ export default class extends think.logic.base {
   loginAction(){
      this.allowMethods = "get,post";
      rules ={
-         email:"required|string",
+         email:{
+             required:true,
+             regexp:/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,
+         },
          password:"required|string"
      };
   }
@@ -26,7 +29,10 @@ export default class extends think.logic.base {
   login2Action(){
      this.allowMethods = "get,post";
      rules ={
-         email:"required|string",
+         email:{
+             required:true,
+             regexp:/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,
+         },
          password:"required|string"
      };
   }
@@ -35,7 +41,10 @@ export default class extends think.logic.base {
      this.allowMethods = "get,post";
      rules ={
          nickname2:"required|string",
-         email2:"required|string",
+         email2:{
+             required:true,
+             regexp:/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,
+         },
          spassword:"required|string",
          realname:"required|string",
          phone:"required|string",
@@ -47,7 +56,10 @@ export default class extends think.logic.base {
      this.allowMethods = "get,post";
      rules ={
          nickname2:"required|string",
-         email2:"required|string",
+         email2:{
+             required:true,
+             regexp:/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/,
+         },
          spassword:"required|string",
          realname:"required|string",
          phone:"required|string",
@@ -61,7 +73,9 @@ export default class extends think.logic.base {
   __after(){
      let flag = this.validate(rules);
      if (!flag) {
-         return this.fail("服务验证错误，请核对数据重试", this.errors());
+         this.assign({title:"邮箱不正确,请您重新输入!"});
+         this.assign({isAlert:true});
+         return this.display("index/index")
      }
   }
   
