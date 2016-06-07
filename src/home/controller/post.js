@@ -289,14 +289,15 @@ async refuseAction(){
         //this.http.header("token", token);
         await this.session("token",token);
         this.assign({
-            title:"登陆成功"
+            title:"登陆成功",
+            isAlert:true,
         });
         let model = this.model("user_login_record");
         await model.addOne({
             time:think.datetime(),
             user_id:data.id,
         });
-        return this.redirect("/index/download");
+        return this.display("index/download");
         
     }else{
         await this.session();
@@ -338,7 +339,8 @@ async refuseAction(){
     //this.http.header("token",token);
     await this.session("token",token);
     this.assign({
-         title:"注册成功"
+         title:"注册成功",
+         isAlert:true,
      })   
 
 
@@ -381,7 +383,8 @@ async refuseAction(){
     await this.session("token",token);
 
      this.assign({
-         title:"注册成功"
+         title:"注册成功",
+         isAlert:true,
      })   
 
 
