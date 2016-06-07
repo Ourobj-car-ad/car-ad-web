@@ -25,7 +25,8 @@ export default class extends think.model.base {
         car_code:carCode,
         city:city,
     },{
-        name:name
+        name:name,
+        email:email
     });
     return data;
   }

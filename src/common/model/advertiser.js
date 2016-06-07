@@ -23,7 +23,8 @@ export default class extends think.model.base {
         phone:phone,
         alipay:alipay,
     },{
-        name:name
+        name:name,
+        email:email
     });
     return data;
   }

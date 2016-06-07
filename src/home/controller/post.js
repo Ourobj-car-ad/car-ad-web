@@ -325,6 +325,14 @@ async refuseAction(){
         p.phone,
         p.pay,
     );
+    //return this.success(data.type)
+    if(data.type == "exist"){
+        this.assign({
+            title:"注册失败,邮箱或昵称已存在!",
+            isAlert:true,
+        })   
+        return this.display("index/index");
+    }
     
     let tokenService = think.service("token");
     let tokenInstance = new tokenService();
@@ -368,6 +376,14 @@ async refuseAction(){
         p.drivingCode,
         p.city,
     );
+    
+    if(data.type == "exist"){
+        this.assign({
+            title:"注册失败,邮箱或昵称已存在!",
+            isAlert:true,
+        })   
+        return this.display("index/index");
+    }
 
     let tokenService = think.service("token");
     let tokenInstance = new tokenService();
@@ -397,7 +413,8 @@ async refuseAction(){
     async adminlogoffAction(){
             await this.session();
             this.assign({
-                title:"管理员登出成功"
+                title:"管理员登出成功",
+                isAlert:true
             })
             return this.display("index/index");
 
