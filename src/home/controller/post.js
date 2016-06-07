@@ -325,7 +325,7 @@ async refuseAction(){
         p.phone,
         p.pay,
     );
-    //return this.success(data.type)
+
     if(data.type == "exist"){
         this.assign({
             title:"注册失败,邮箱或昵称已存在!",
